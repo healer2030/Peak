@@ -1,0 +1,70 @@
+/**
+ * Style Sheet for Peak Airlines
+ * version: 1.0
+ * author: Somtochukwu Nwagbata
+ * 
+ *
+ * CONTENTS:
+ * Resets and General
+ * Header
+ * Main Content
+ * Footer
+ */
+
+
+/* Resets and General */
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    ;
+    font-weight: 400;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.9);
+    background: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+
+
+/* Header */
+#logo {
+    height: 2em;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+/* Main Content */
+#home {
+    background: linear-gradient(rgba(20, 20, 20, .15), rgba(20, 20, 20, .15)), url('../images/home.jpg');
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*align home to center*/
+.home-cont {
+    width: 90%;
+    z-index: 10;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
