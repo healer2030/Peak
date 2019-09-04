@@ -5,4 +5,3 @@
  */
 
 
-//Animate home

@@ -12,7 +12,9 @@
  */
 
 
-/* Resets and General */
+/**
+  * Resets and General 
+  */
 body,
 html {
     height: 100%;
@@ -21,7 +23,6 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    ;
     font-weight: 400;
     font-size: 1.05rem;
     line-height: 1.7;
@@ -39,32 +40,94 @@ h6 {
     text-align: center;
 }
 
+.bg-1 {
+    background-color: #061E47;
+}
 
+.text-1{
+    color: #2B6AD0;
+}
 
-/* Header */
+/**
+ * Header
+ */
 #logo {
     height: 2em;
 }
 
-.nav-link {
-    color: #fff !important;
-}
 
-/* Main Content */
+/**
+ * Main Content 
+ */
+
+/* Set style bg pic for home*/
 #home {
-    background: linear-gradient(rgba(20, 20, 20, .15), rgba(20, 20, 20, .15)), url('../images/home.jpg');
+    background: linear-gradient(rgba(20, 20, 20, .3), rgba(20, 20, 20, .3)), url('../images/home.jpg');
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+/* Resize home section on mobile*/
+@media screen and (max-width: 992px){
+    #home{
+        height: 40%;
+    }
+    .home-cont {
+        top: 25% !important;
+        align-self: center;
+    }
+    #home h1{
+        font-size: 10vw;
+    }
+}
+
 /*align home to center*/
 .home-cont {
     width: 90%;
-    z-index: 10;
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -40%);
+}
+
+
+/* key frame animations for text on homescreen*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-reveal {
+    opacity: 0;
+    animation: fadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 0.7s;
+}
+
+/* Animation for tabs for .7s*/
+.tabcontent {
+    animation: fadeEffect 0.7s;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+a.reset-link.active{
+    background-color: #1F4591;
 }
