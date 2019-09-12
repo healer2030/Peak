@@ -30,56 +30,7 @@ body {
     background: #fff;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-}
-
-.bg-1 {
-    background-color: #061E47;
-}
-
-.bg-2 {
-    background-color: #1F4591;
-}
-
-.text-1{
-    color: #2B6AD0;
-}
-
-/**
- * Header
- */
-#logo {
-    height: 3.5em;
-}
-
-
-/**
- * Main Content 
- */
-
-/* Set style bg pic for home*/
-#home {
-    background: linear-gradient(rgba(20, 20, 20, .3), rgba(20, 20, 20, .3)), url('../images/home.jpg');
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-}
-
-.align{
-    display: inline-block;
-    position: relative;
-}
-
-
-/* key frame animations for text on homescreen*/
+/* key frame animations for elements*/
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -98,10 +49,6 @@ h6 {
     animation-delay: 0.7s;
 }
 
-/* Animation for tabs for .7s*/
-.tabcontent {
-    animation: fadeEffect 0.7s;
-}
 
 /* Go from zero to full opacity */
 @keyframes fadeEffect {
@@ -114,6 +61,84 @@ h6 {
     }
 }
 
-a.reset-link.active{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.bg-1 {
+    background-color: #061E47;
+}
+
+.bg-2 {
+    background-color: #1F4591;
+}
+
+.bg-3{
+    background-color: #1F4591;
+}
+.text-1 {
+    color: #2B6AD0;
+}
+
+/**
+ * Header
+ */
+#logo {
+    height: 3.5em;
+}
+
+.dropdown-animate{
+    animation: fadeEffect 0.7s;
+}
+.dropdown-item{
+    color: #fff;
+
+}
+
+/**
+ * Main Content 
+ */
+
+/* Set style bg pic for home and center elements*/
+#home {
+    background: linear-gradient(rgba(20, 20, 20, .3), rgba(20, 20, 20, .3)), url('../images/home.jpg');
+    width: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+}
+
+#home .center {
+    margin: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Animation for tabs for .7s and change styling*/
+.tabcontent {
+    animation: fadeEffect 0.7s;
+} 
+
+.tab-pane{
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+/* Remove BS default nav-tab border styling*/
+.nav-tabs .nav-link{
+    border: 0;
+}
+
+
+a.reset-link.active {
     background-color: #1F4591 !important;
 }
