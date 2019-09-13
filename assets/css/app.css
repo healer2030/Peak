@@ -30,6 +30,10 @@ body {
     background: #fff;
 }
 
+a.reset-link.active {
+    background-color: #1F4591 !important;
+}
+
 /* key frame animations for elements*/
 @keyframes fadeIn {
     from {
@@ -79,13 +83,13 @@ h6 {
     background-color: #1F4591;
 }
 
-.bg-3{
-    background-color: #1F4591;
-}
-.text-1 {
-    color: #2B6AD0;
+.bg-3 {
+    background-color: #2B6AD0;
 }
 
+.bg-4{
+    background-color: #68A4F1;
+}
 /**
  * Header
  */
@@ -93,10 +97,11 @@ h6 {
     height: 3.5em;
 }
 
-.dropdown-animate{
+.dropdown-animate {
     animation: fadeEffect 0.7s;
 }
-.dropdown-item{
+
+.dropdown-item {
     color: #fff;
 
 }
@@ -108,37 +113,35 @@ h6 {
 /* Set style bg pic for home and center elements*/
 #home {
     background: linear-gradient(rgba(20, 20, 20, .3), rgba(20, 20, 20, .3)), url('../images/home.jpg');
+    min-height: 75%;
     width: 100%;
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    text-align: center;
     position: relative;
+    display:table;
 }
 
-#home .center {
-    margin: 0;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+ .center {
+    display:table-cell;
+    vertical-align:middle;
 }
 
 /* Animation for tabs for .7s and change styling*/
-.tabcontent {
-    animation: fadeEffect 0.7s;
-} 
-
-.tab-pane{
+.tab-pane {
+    min-height: 10em;
+    padding: 1em;
     border-bottom-left-radius: .25rem;
     border-bottom-right-radius: .25rem;
+    animation: fadeEffect 0.7s;
 }
+
 /* Remove BS default nav-tab border styling*/
-.nav-tabs .nav-link{
+.nav-tabs .nav-link {
     border: 0;
 }
 
-
-a.reset-link.active {
-    background-color: #1F4591 !important;
+/*push home tabs down*/
+.nav-tab {
+    margin-top: 6em;
 }

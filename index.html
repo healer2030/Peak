@@ -15,10 +15,13 @@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
     <title>Peak</title>
+    <!--Core BootStrap, font, and custom styles-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet" />
+    <!--Datetime picker style-->
+    <link href="assets/css/datepicker.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -32,15 +35,16 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                        <div class="dropdown-divider"></div>
+                    <div class="dropdown-divider"></div>
                     <ul class="navbar-nav ml-auto pl-5">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel Info</a>
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel Info</a>
                             <div class="dropdown-menu dropdown-animate bg-3" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="#">Timetable</a>
                                 <a class="dropdown-item" href="#">Special travel needs</a>
                                 <a class="dropdown-item" href="#">Inflight services</a>
-                              </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Deals and Offers</a>
@@ -54,43 +58,94 @@
         </nav>
     </header>
     <main>
-        <section id="home" class="h-75 home">
+        <section id="home" class="home">
             <!--Animate screen on load for .7s-->
             <!--Define tab menues for flight main options like booking-->
-            <div class="container animate-reveal center">
-                <!--Tablinks-->
-                <nav >
-                    <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link reset-link bg-1 text-white active" id="book-tab" data-toggle="tab"
-                                href="#book" role="tab" aria-controls="book" aria-selected="true">Book</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link reset-link bg-1 text-white" id="checkIn-tab" data-toggle="tab"
-                                href="#checkIn" role="tab" aria-controls="checkIn" aria-selected="false">Check-in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link reset-link bg-1 text-white" id="status-tab" data-toggle="tab"
-                                href="#status" role="tab" aria-controls="flight status" aria-selected="false">Flight
-                                status</a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="animate-reveal center">
+                <div class="container">
+                    <!--Tablinks-->
+                    <nav class="nav-tab">
+                        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link reset-link bg-1 text-white active" id="book-tab" data-toggle="tab"
+                                    href="#book" role="tab" aria-controls="book" aria-selected="true">Book</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link reset-link bg-1 text-white" id="checkIn-tab" data-toggle="tab"
+                                    href="#checkIn" role="tab" aria-controls="checkIn"
+                                    aria-selected="false">Check-in</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link reset-link bg-1 text-white" id="status-tab" data-toggle="tab"
+                                    href="#status" role="tab" aria-controls="flight status" aria-selected="false">Flight
+                                    status</a>
+                            </li>
+                        </ul>
+                    </nav>
 
-                <!-- Tab content -->
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane text-white fade bg-2 show active" id="book" role="tabpanel" aria-labelledby="book-tab">
-                        <form></form>
-                    </div>
+                    <!-- Tab content -->
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane text-white fade bg-2 show active" id="book" role="tabpanel"
+                            aria-labelledby="book-tab">
+                            <form id="book-form">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flightType" id="f-type2"
+                                        value="round-trip">
+                                    <label class="form-check-label" for="f-type2">Round trip</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flightType" id="f-type"
+                                        value="one-way">
+                                    <label class="form-check-label" for="f-type">One-way</label>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="f-from">From</label>
+                                        <input type="text" class="form-control" id="f-from" placeholder="Where from?">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="f-to">To</label>
+                                        <input type="text" class="form-control" id="f-to" placeholder="Where to?">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="f-depart">Date</label>
+                                        <input type="text" class="form-control" id="f-date"
+                                            placeholder="Select ticket type to choose dates" disabled="true"
+                                            readonly="readonly">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="f-travellers">Return</label>
+                                        <select class="custom-select mr-sm-2" id="f-travellers">
+                                            <option value="1" selected>1 Passenger</option>
+                                            <option value="2">2 Passengers</option>
+                                            <option value="3">3 Passengers</option>
+                                            <option value="4">4 Passengers</option>
+                                            <option value="5">5 Passengers</option>
+                                            <option value="6">6 Passengers</option>
+                                            <option value="7">7 Passengers</option>
+                                            <option value="8">8 Passengers</option>
+                                            <option value="9">9 Passengers</option>
 
-                    <div class="tab-pane text-white fade bg-2" id="checkIn" role="tabpanel" aria-labelledby="checkIn-tab">
-                        <h3>Paris</h3>
-                        <p>Paris is the capital of France.</p>
-                    </div>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button class="btn bg-4 text-white" type="submit">Search flights</button>
+                            </form>
+                        </div>
 
-                    <div class="tab-pane text-white fade bg-2" id="status" role="tabpanel" aria-labelledby="status-tab">
-                        <h3>Tokyo</h3>
-                        <p>Tokyo is the capital of Japan.</p>
+                        <div class="tab-pane text-white fade bg-2" id="checkIn" role="tabpanel"
+                            aria-labelledby="checkIn-tab">
+                            <h3>Paris</h3>
+                            <p>Paris is the capital of France.</p>
+                        </div>
+
+                        <div class="tab-pane text-white fade bg-2" id="status" role="tabpanel"
+                            aria-labelledby="status-tab">
+                            <h3>Tokyo</h3>
+                            <p>Tokyo is the capital of Japan.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,6 +166,9 @@
         crossorigin="anonymous"></script>
     <!--  Custom Scripts -->
     <script src="assets/js/app.js"></script>
+    <!--Datetime picker script-->
+    <script src="assets/js/datepicker.min.js"></script>
+    <script src="assets/js/datepicker.en.js"></script>
 </body>
 
 </html>
