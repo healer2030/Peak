@@ -87,7 +87,7 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane text-white fade bg-2 show active" id="book" role="tabpanel"
                             aria-labelledby="book-tab">
-                            <form id="book-form">
+                            <form id="book-form" method="POST" action="">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="flightType" id="f-type2"
                                         value="round-trip">
@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
-                                        <label for="f-depart">Date</label>
+                                        <label for="f-depart">Flight Date</label>
                                         <input type="text" class="form-control" id="f-date"
                                             placeholder="Select ticket type to choose dates" disabled="true"
                                             readonly="readonly">
