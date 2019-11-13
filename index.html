@@ -88,15 +88,16 @@
                         <div class="tab-pane text-white fade bg-2 show active" id="book" role="tabpanel"
                             aria-labelledby="book-tab">
                             <form id="book-form" method="POST" action="">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="flightType" id="f-type2"
-                                        value="round-trip">
-                                    <label class="form-check-label" for="f-type2">Round trip</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="flightType" id="f-type"
-                                        value="one-way">
-                                    <label class="form-check-label" for="f-type">One-way</label>
+
+                                <div class="btn-group btn-group-toggle active" data-toggle="buttons">
+
+                                    <label class="btn btn-outline-primary active" for="f-type2"> <input class="form-check-input"
+                                            type="radio" name="flightType" id="f-type2" value="round-trip" checked>Round trip
+                                    </label>
+
+                                    <label class="btn btn-outline-primary">
+                                        <input class="form-check-input" type="radio" name="flightType" id="f-type"
+                                            value="one-way">One-way </label>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
@@ -116,7 +117,7 @@
                                             readonly="readonly">
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <label for="f-travellers">Return</label>
+                                        <label for="f-travellers">Travelers</label>
                                         <select class="custom-select mr-sm-2" id="f-travellers">
                                             <option value="1" selected>1 Passenger</option>
                                             <option value="2">2 Passengers</option>
