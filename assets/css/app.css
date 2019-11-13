@@ -22,16 +22,148 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
     font-weight: 400;
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: rgba(0, 0, 0, 0.9);
     background: #fff;
 }
 
+img {
+    max-width: 100%;
+    border-radius: 1px;
+}
+
 a.reset-link.active {
     background-color: #1F4591 !important;
+}
+
+
+.nav-tabs {
+  border: 0;
+  padding: 15px 0.7rem;
+  margin-top: 6em;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+}
+
+.nav-tabs:not(.nav-tabs-neutral)>.nav-item>.nav-link.active {
+  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.3);
+}
+
+.card .nav-tabs {
+  border-top-right-radius: 0.1875rem;
+  border-top-left-radius: 0.1875rem;
+}
+
+.nav-tabs>.nav-item>.nav-link {
+  color: #888888;
+  margin: 0;
+  margin-right: 5px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  font-size: 14px;
+  padding: 11px 23px;
+  line-height: 1.5;
+}
+
+.nav-tabs>.nav-item>.nav-link:hover {
+  background-color: transparent;
+}
+
+.nav-tabs>.nav-item>.nav-link.active {
+  background-color: #444;
+  border-radius: 30px;
+  color: #FFFFFF;
+}
+
+.nav-tabs>.nav-item>.nav-link i.now-ui-icons {
+  font-size: 14px;
+  position: relative;
+  top: 1px;
+  margin-right: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-tabs {
+      display: inline-block;
+      width: 100%;
+      padding-left: 100px;
+      padding-right: 100px;
+      text-align: center;
+    }
+    .nav-tabs .nav-item>.nav-link {
+      margin-bottom: 5px;
+    }
+  }
+
+  .navbar .navbar-brand {
+    text-transform: uppercase;
+    font-size: 0.8571em;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 1.625rem;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+}
+
+.form-group .form-control, .input-group .form-control {
+    padding: 10px 18px 10px 18px;
+}
+
+.form-control {
+    border: 1px solid #E3E3E3;
+    border-radius: 30px;
+    height: auto;
+    line-height: normal;
+    font-size: 0.8571em;
+    -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -moz-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.form-check {
+    margin-top: .65rem;
+    padding-left: 0;
+}
+.form-check .form-check-label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 35px;
+    line-height: 26px;
+    margin-bottom: 0;
+    transition: color .3s linear;
+}
+
+
+
+.btn, .navbar .navbar-nav>a.btn {
+    border-width: 2px;
+    font-weight: 400;
+    font-size: 0.8571em;
+    line-height: 1.35em;
+    margin: 10px 1px;
+    border: none;
+    border-radius: 0.1875rem;
+    padding: 11px 22px;
+    cursor: pointer;
+    background-color: #888888;
+    color: #FFFFFF;
+}
+
+label {
+    margin-bottom: 0rem;
 }
 
 /* key frame animations for elements*/
@@ -134,7 +266,16 @@ h6 {
     border-bottom-left-radius: .25rem;
     border-bottom-right-radius: .25rem;
     animation: fadeEffect 0.7s;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
 }
+
+#navbarNav{
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+
 
 /* Remove BS default nav-tab border styling*/
 .nav-tabs .nav-link {
@@ -142,6 +283,3 @@ h6 {
 }
 
 /*push home tabs down*/
-.nav-tab {
-    margin-top: 6em;
-}

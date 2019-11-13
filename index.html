@@ -18,10 +18,12 @@
     <!--Core BootStrap, font, and custom styles-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet" />
     <!--Datetime picker style-->
     <link href="assets/css/datepicker.min.css" rel="stylesheet" type="text/css">
+    
 </head>
 
 <body>
@@ -65,7 +67,7 @@
                 <div class="container">
                     <!--Tablinks-->
                     <nav class="nav-tab">
-                        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs nav-fill bg-1" id="myTab"role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link reset-link bg-1 text-white active" id="book-tab" data-toggle="tab"
                                     href="#book" role="tab" aria-controls="book" aria-selected="true">Book</a>
@@ -89,15 +91,15 @@
                             aria-labelledby="book-tab">
                             <form id="book-form" method="POST" action="">
 
-                                <div class="btn-group btn-group-toggle active" data-toggle="buttons">
+                                <div class="form-check form-check-radio">
 
-                                    <label class="btn btn-outline-primary active" for="f-type2"> <input class="form-check-input"
-                                            type="radio" name="flightType" id="f-type2" value="round-trip" checked>Round trip
+                                    <label class="form-check-label" for="f-type2"> <input class="form-check-input"
+                                            type="radio" name="flightType" id="f-type2" value="round-trip"><span class="form-check-sign" >Round trip</span>
                                     </label>
 
-                                    <label class="btn btn-outline-primary">
+                                    <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="flightType" id="f-type"
-                                            value="one-way">One-way </label>
+                                            value="one-way"><span class="form-check-sign" >One-way</span> </label>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
@@ -113,12 +115,12 @@
                                     <div class="form-group col-sm-6">
                                         <label for="f-depart">Flight Date</label>
                                         <input type="text" class="form-control" id="f-date"
-                                            placeholder="Select ticket type to choose dates" disabled="true"
+                                            placeholder="Select ticket type" disabled="true"
                                             readonly="readonly">
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="f-travellers">Travelers</label>
-                                        <select class="custom-select mr-sm-2" id="f-travellers">
+                                        <select class="form-control custom-select mr-sm-2" id="f-travellers">
                                             <option value="1" selected>1 Passenger</option>
                                             <option value="2">2 Passengers</option>
                                             <option value="3">3 Passengers</option>
@@ -132,7 +134,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <button class="btn bg-4 text-white" type="submit">Search flights</button>
+                                <button class="btn text-white" type="submit">Find flights</button>
                             </form>
                         </div>
 
@@ -166,10 +168,12 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!--  Custom Scripts -->
+    
     <script src="assets/js/app.js"></script>
     <!--Datetime picker script-->
     <script src="assets/js/datepicker.min.js"></script>
     <script src="assets/js/datepicker.en.js"></script>
+    <script src="assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
 </body>
 
 </html>
