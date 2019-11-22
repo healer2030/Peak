@@ -28,6 +28,7 @@ body {
     line-height: 1.7;
     color: rgba(0, 0, 0, 0.9);
     background: #fff;
+    overflow-x: hidden;
 }
 
 img {
@@ -140,7 +141,7 @@ a.reset-link.active {
     display: inline-block;
     position: relative;
     cursor: pointer;
-    padding-left: 35px;
+    padding-left: 20px;
     line-height: 26px;
     margin-bottom: 0;
     transition: color .3s linear;
