@@ -38,6 +38,12 @@ $(document).ready(function () {
             date.show();
         }
     })
+    date = $('#s-date').datepicker({
+        language: 'en',
+        minDate: new Date(),
+        range: false
+    })
+    date.show();
 });
 
 
