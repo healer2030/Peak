@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Peak: An">
+    <meta name="description" content="Peak: A discount airline">
     <meta name="author" content="Somtochukwu Nwagbata">
     <meta name="robots" content="index,follow">
     <meta content="True" name="HandheldFriendly">
@@ -91,7 +91,7 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane text-white fade bg-2 show active" id="book" role="tabpanel"
                             aria-labelledby="book-tab">
-                            <form id="book-form" method="POST" action="">
+                            <form id="book-form" method="POST" action="" autocomplete="off" >
 
                                 <div class="form-check form-check-radio">
 
@@ -105,11 +105,11 @@
                                             value="one-way"><span class="form-check-sign">One-way</span> </label>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-sm-6">
+                                    <div class="form-group col-sm-6 autocomplete">
                                         <label for="f-from">From</label>
                                         <input type="text" class="form-control" id="f-from" placeholder="Where from?">
                                     </div>
-                                    <div class="form-group col-sm-6">
+                                    <div class="form-group col-sm-6 autocomplete">
                                         <label for="f-to">To</label>
                                         <input type="text" class="form-control" id="f-to" placeholder="Where to?">
                                     </div>
@@ -162,15 +162,15 @@
 
                         <div class="tab-pane text-white fade bg-2" id="status" role="tabpanel"
                             aria-labelledby="status-tab">
-                            <form id="check-in" method="POST" action="">
+                            <form id="check-in" method="POST" action="" autocomplete="off">
                                 <div class="form-row">
-                                    <div class="form-group col-sm-6">
+                                    <div class="form-group col-sm-6 autocomplete">
                                         <label for="f-from">From</label>
-                                        <input type="text" class="form-control" id="ci-name" placeholder="From">
+                                        <input type="text" class="form-control" id="f-froms" placeholder="From">
                                     </div>
-                                    <div class="form-group col-sm-6">
+                                    <div class="form-group col-sm-6 autocomplete">
                                         <label for="f-to">To</label>
-                                        <input type="text" class="form-control" id="ci-code"
+                                        <input type="text" class="form-control" id="f-tos"
                                             placeholder="To">
                                     </div>
                                 </div>
@@ -352,7 +352,6 @@
     <!--Datetime picker script-->
     <script src="assets/js/datepicker.min.js"></script>
     <script src="assets/js/datepicker.en.js"></script>
-    <script src="assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
 </body>
 
 </html>
