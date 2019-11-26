@@ -23,8 +23,6 @@
     <link href="assets/css/app.css" rel="stylesheet" />
     <link href="assets/css/fontawesome.css" rel="stylesheet">
     <link href="assets/css/brands.css" rel="stylesheet">
-    <!--Datetime picker style-->
-    <link href="assets/css/datepicker.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -47,7 +45,7 @@
                             <div class="dropdown-menu dropdown-animate bg-3" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="timetable.html">Timetable</a>
                                 <a class="dropdown-item" href="sptr.html">Special travel needs</a>
-                                <a class="dropdown-item" href="inflight.html">Inflight services</a>
+                                <a class="dropdown-item" href="#">Inflight services</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -61,126 +59,7 @@
             </div>
         </nav>
     </header>
-    <main>
-        <section id="home" class="home">
-            <!--Animate screen on load for .7s-->
-            <!--Define tab menues for flight main options like booking-->
-            <div class="animate-reveal center">
-                <div class="container">
-                    <!--Tablinks-->
-                    <nav class="nav-tab">
-                        <ul class="nav nav-tabs nav-fill bg-1" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link reset-link bg-1 text-white active" id="book-tab" data-toggle="tab"
-                                    href="#book" role="tab" aria-controls="book" aria-selected="true">Book</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link reset-link bg-1 text-white" id="checkIn-tab" data-toggle="tab"
-                                    href="#checkIn" role="tab" aria-controls="checkIn"
-                                    aria-selected="false">Check-in</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link reset-link bg-1 text-white" id="status-tab" data-toggle="tab"
-                                    href="#status" role="tab" aria-controls="flight status" aria-selected="false">Flight
-                                    status</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <!-- Tab content -->
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane text-white fade bg-2 show active" id="book" role="tabpanel"
-                            aria-labelledby="book-tab">
-                            <form id="book-form" method="POST" action="">
-
-                                <div class="form-check form-check-radio">
-
-                                    <label class="form-check-label" for="f-type2"> <input class="form-check-input"
-                                            type="radio" name="flightType" id="f-type2" value="round-trip"><span
-                                            class="form-check-sign">Round trip</span>
-                                    </label>
-
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="flightType" id="f-type"
-                                            value="one-way"><span class="form-check-sign">One-way</span> </label>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-sm-6">
-                                        <label for="f-from">From</label>
-                                        <input type="text" class="form-control" id="f-from" placeholder="Where from?">
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <label for="f-to">To</label>
-                                        <input type="text" class="form-control" id="f-to" placeholder="Where to?">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-sm-3">
-                                        <label for="f-depart">Flight Date</label>
-                                        <input type="text" class="form-control" id="f-date"
-                                            placeholder="Select ticket type" disabled="true" readonly="readonly">
-                                    </div>
-                                    <div class="form-group col-sm-3">
-                                        <label for="f-travellers">Travelers</label>
-                                        <select class="form-control custom-select mr-sm-2" id="f-travellers">
-                                            <option value="1" selected>1 Passenger</option>
-                                            <option value="2">2 Passengers</option>
-                                            <option value="3">3 Passengers</option>
-                                            <option value="4">4 Passengers</option>
-                                            <option value="5">5 Passengers</option>
-                                            <option value="6">6 Passengers</option>
-                                            <option value="7">7 Passengers</option>
-                                            <option value="8">8 Passengers</option>
-                                            <option value="9">9 Passengers</option>
-
-                                        </select>
-                                    </div>
-                                    <div class="d-flex form-group col-sm-6 justify-content-end">
-                                        <button class="btn text-white mr-5 mt-4" type="submit">Find flights</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="tab-pane text-white fade bg-2" id="checkIn" role="tabpanel"
-                            aria-labelledby="checkIn-tab">
-                            <form id="check-in" method="POST" action="">
-                                <div class="form-row">
-                                    <div class="form-group col-sm-6">
-                                        <label for="f-from">Last Name</label>
-                                        <input type="text" class="form-control" id="ci-name" placeholder="Last Name">
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <label for="f-to">Reservation Code</label>
-                                        <input type="text" class="form-control" id="ci-code"
-                                            placeholder="Reservation Code">
-                                    </div>
-                                </div>
-                                <button class="btn text-white" type="submit">Check-in</button>
-                            </form>
-                        </div>
-
-                        <div class="tab-pane text-white fade bg-2" id="status" role="tabpanel"
-                            aria-labelledby="status-tab">
-                            <h3>Tokyo</h3>
-                            <p>Tokyo is the capital of Japan.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="about" class="container">
-            <h2 class="display-">The Peak Experience</h2>
-            <p>
-                Welcome to Peak Airlines, the best airline with the cheapest prices. At Peak, we strive to bring the
-                best airline experience you never had before. Sign up for our reward program, PeakPoints to gain access
-                to exclusive bonuses for our loyal guests with Peak. We hope you enjoy your time with Peak Airlines.
-                Remember Fly High, Pay Less.
-            </p>
-            <hr>
-        </section>
-
-    </main>
+    <main></main>
     <!-- Footer -->
     <footer class="font-small navbar-dark bg-dark-1 text-white">
 
@@ -322,10 +201,7 @@
     <!--  Custom Scripts -->
 
     <script src="assets/js/app.js"></script>
-
     <!--Datetime picker script-->
-    <script src="assets/js/datepicker.min.js"></script>
-    <script src="assets/js/datepicker.en.js"></script>
     <script src="assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
 </body>
 
