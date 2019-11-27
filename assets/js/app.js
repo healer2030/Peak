@@ -45,6 +45,7 @@ $(document).ready(function () {
         range: false
     })
     date.show();
+    date.blur();
 
     $('#f-to').selectize({sortField: 'text'});
     $('#f-from').selectize({sortField: 'text'});
