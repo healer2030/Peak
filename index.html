@@ -96,19 +96,19 @@
                                 <div class="form-check form-check-radio">
 
                                     <label class="form-check-label" for="f-type2"> <input class="form-check-input"
-                                            type="radio" name="flightType" id="f-type2" value="round-trip"><span
+                                            type="radio" name="flightType" id="f-type2" value="round-trip" required><span
                                             class="form-check-sign">Round trip</span>
                                     </label>
 
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="flightType" id="f-type"
-                                            value="one-way"><span class="form-check-sign">One-way</span> </label>
+                                            value="one-way" required><span class="form-check-sign">One-way</span> </label>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-sm-6 autocomplete">
                                         <label for="f-from">From</label>
 
-                                        <select id="f-from" class="form-control" placeholder="Where from?">
+                                        <select id="f-from" class="form-control" placeholder="Where from?" required>
                                             <option value="">Where from?</option>
                                             <option value="ATL">Atlanta, GA (ATL)</option>
                                             <option value="BHM">Birmingham, AL (BHM)</option>
@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="f-to">To</label>
-                                        <select id="f-to" class="form-control" placeholder="Where to?">
+                                        <select id="f-to" class="form-control" placeholder="Where to?" required>
                                             <option value="">Where to?</option>
                                             <option value="ATL">Atlanta, GA (ATL)</option>
                                             <option value="BHM">Birmingham, AL (BHM)</option>
@@ -182,12 +182,13 @@
                                 <div class="form-row">
                                     <div class="form-group col-sm-3">
                                         <label for="f-depart">Flight Date</label>
-                                        <input type="text" class="form-control" id="f-date"
-                                            placeholder="Select ticket type" disabled="true" readonly="readonly">
+                                        <input type="text" onchange="console.log(datepicker.selectedDates[0]);"
+                                            class="form-control" id="f-date" placeholder="Select ticket type"
+                                            disabled="true" readonly="readonly" required>
                                     </div>
                                     <div class="form-group col-sm-3">
                                         <label for="f-travellers">Travelers</label>
-                                        <select class="form-control custom-select mr-sm-2" id="f-travellers">
+                                        <select class="form-control custom-select mr-sm-2" id="f-travellers" required>
                                             <option value="1" selected>1 Passenger</option>
                                             <option value="2">2 Passengers</option>
                                             <option value="3">3 Passengers</option>
@@ -201,9 +202,29 @@
                                         </select>
                                     </div>
                                     <div class="d-flex form-group col-sm-6 justify-content-end">
-                                        <button class="btn text-white mr-5 mt-4" type="submit">Find flights</button>
+                                        <button onclick="findFlights()" class="btn text-white mr-5 mt-4"
+                                            type="button">Find flights</button>
                                     </div>
                                 </div>
+                                <script type="text/javascript"> function findFlights() {
+                                        var fFrom = document.getElementById("f-from");
+                                        var fTo = document.getElementById("f-to");
+                                        var pCount = document.getElementById("f-travellers");
+                                        var datepicker = $('#f-date').datepicker().data('datepicker');
+                                        var fDateD = datepicker.selectedDates[0];
+                                        var fDateR = datepicker.selectedDates[1];
+                                        localStorage.setItem("flightType", document.querySelector('input[name="flightType"]:checked').value);
+                                        localStorage.setItem("fFrom", (fFrom.options[fFrom.selectedIndex].value));
+                                        localStorage.setItem("fTo", (fTo.options[fTo.selectedIndex].value));
+                                        localStorage.setItem("pCount", (pCount.options[pCount.selectedIndex].value));
+                                        localStorage.setItem("fDateD", fDateD);
+                                        if (fDateR != undefined) {
+                                            localStorage.setItem("fDateR", fDateR);
+                                        }
+
+                                        document.location.href = "flightSearch.html"
+
+                                    }</script>
                             </form>
                         </div>
 
@@ -213,112 +234,55 @@
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
                                         <label for="f-from">Last Name</label>
-                                        <input type="text" class="form-control" id="ci-name" placeholder="Last Name">
+                                        <input type="text" class="form-control" id="ci-name" placeholder="Last Name" required>
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="f-to">Reservation Code</label>
                                         <input type="text" class="form-control" id="ci-code"
-                                            placeholder="Reservation Code">
+                                            placeholder="Reservation Code" required>
                                     </div>
                                 </div>
-                                <button class="btn text-white" type="submit">Check-in</button>
+                                <button class="btn text-white" onclick="checkIn()" type="button">Check-in</button>
+                                <script type="text/javascript"> function checkIn() {
+                                        var name = document.getElementById("ci-name").value;
+                                        var code = document.getElementById("ci-code").value;
+                                        localStorage.setItem("ci-code", code);
+                                        localStorage.setItem("name", name);
+                                        document.location.href = "checkIn.html"
+
+                                    }</script>
                             </form>
+
                         </div>
 
                         <div class="tab-pane text-white fade bg-2" id="status" role="tabpanel"
                             aria-labelledby="status-tab">
-                            <form id="check-in" method="POST" action="" autocomplete="off">
+                            <form id="status" method="POST" action="" autocomplete="off">
                                 <div class="form-row">
-                                    <div class="form-group col-sm-6 autocomplete">
-                                        <label for="f-from">From</label>
-                                        <select id="f-froms" class="form-control" placeholder="From?">
-                                            <option value="">From?</option>
-                                            <option value="ATL">Atlanta, GA (ATL)</option>
-                                            <option value="BHM">Birmingham, AL (BHM)</option>
-                                            <option value="MIA">Miami, FL (MIA)</option>
-                                            <option value="HSV">Huntsville, AL (HSV)</option>
-                                            <option value="MCO">Orlando, FL (MCO)</option>
-                                            <option value="BNA">Nashville, TN (BNA)</option>
-                                            <option value="MEM">Memphis, TN (MEM)</option>
-                                            <option value="CLT">Charlotte, NC (CLT)</option>
-                                            <option value="RDU">Raleigh, NC (RDU)</option>
-                                            <option value="GSP">Greenville, SC (GSP)</option>
-                                            <option value="JAX">Jacksonville, FL (JAX)</option>
-                                            <option value="DAB">Daytona Beach, FL (DAB)</option>
-                                            <option value="VPS">Destin-Fort Walton Beach, FL (VPS)</option>
-                                            <option value="EYW">Key West, FL (EYW)</option>
-                                            <option value="MLB">Melbourne, FL (MLB)</option>
-                                            <option value="DHN">Dothan, AL (DHN)</option>
-                                            <option value="MOB">Mobile, AL (MOB)</option>
-                                            <option value="MGM">Montgomery, AL (MGM)</option>
-                                            <option value="CHA">Chattanooga, TN (CHA)</option>
-                                            <option value="TYS">Knoxville, TN (TYS)</option>
-                                            <option value="TRI">Tri City, TN (TRI)</option>
-                                            <option value="CHS">Charleston, SC (CHS)</option>
-                                            <option value="CAE">Columbia, SC (CAE)</option>
-                                            <option value="HHH">Hilton Head Island, SC (HHH)</option>
-                                            <option value="MYR">Myrtle Beach, SC (MYR)</option>
-                                            <option value="OAJ">Jacksonville, NC (OAJ)</option>
-                                            <option value="AVL">Asheville, NC (AVL)</option>
-                                            <option value="FAY">Fayetteville, NC (FAY)</option>
-                                            <option value="GSO">Greensboro, NC (GSO)</option>
-                                            <option value="EWN">New Bern, NC (EWN)</option>
-
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-sm-6 autocomplete">
-                                        <label for="f-tos">To</label>
-                                        <select id="f-tos" class="form-control" placeholder="To?">
-                                            <option value="">To?</option>
-                                            <option value="ATL">Atlanta, GA (ATL)</option>
-                                            <option value="BHM">Birmingham, AL (BHM)</option>
-                                            <option value="MIA">Miami, FL (MIA)</option>
-                                            <option value="HSV">Huntsville, AL (HSV)</option>
-                                            <option value="MCO">Orlando, FL (MCO)</option>
-                                            <option value="BNA">Nashville, TN (BNA)</option>
-                                            <option value="MEM">Memphis, TN (MEM)</option>
-                                            <option value="CLT">Charlotte, NC (CLT)</option>
-                                            <option value="RDU">Raleigh, NC (RDU)</option>
-                                            <option value="GSP">Greenville, SC (GSP)</option>
-                                            <option value="JAX">Jacksonville, FL (JAX)</option>
-                                            <option value="DAB">Daytona Beach, FL (DAB)</option>
-                                            <option value="VPS">Destin-Fort Walton Beach, FL (VPS)</option>
-                                            <option value="EYW">Key West, FL (EYW)</option>
-                                            <option value="MLB">Melbourne, FL (MLB)</option>
-                                            <option value="DHN">Dothan, AL (DHN)</option>
-                                            <option value="MOB">Mobile, AL (MOB)</option>
-                                            <option value="MGM">Montgomery, AL (MGM)</option>
-                                            <option value="CHA">Chattanooga, TN (CHA)</option>
-                                            <option value="TYS">Knoxville, TN (TYS)</option>
-                                            <option value="TRI">Tri City, TN (TRI)</option>
-                                            <option value="CHS">Charleston, SC (CHS)</option>
-                                            <option value="CAE">Columbia, SC (CAE)</option>
-                                            <option value="HHH">Hilton Head Island, SC (HHH)</option>
-                                            <option value="MYR">Myrtle Beach, SC (MYR)</option>
-                                            <option value="OAJ">Jacksonville, NC (OAJ)</option>
-                                            <option value="AVL">Asheville, NC (AVL)</option>
-                                            <option value="FAY">Fayetteville, NC (FAY)</option>
-                                            <option value="GSO">Greensboro, NC (GSO)</option>
-                                            <option value="EWN">New Bern, NC (EWN)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-sm-3">
+                                    <div class="form-group col-sm-6">
                                         <label for="f-from">Flight Number</label>
                                         <input type="text" class="form-control" id="f-number"
-                                            placeholder="Flight Number">
+                                            placeholder="Flight Number" required>
                                     </div>
-                                    <div class="form-group col-sm-3">
+                                    <div class="form-group col-sm-6">
                                         <label for="f-depart">Flight Date</label>
                                         <input type="text" class="form-control" id="s-date" placeholder="Date"
-                                            readonly="readonly">
+                                            readonly="readonly" required>
                                     </div>
-                                    <div class="d-flex form-group col-sm-6 justify-content-end">
-                                        <button class="btn text-white mr-5 mt-4" type="submit">Find flights</button>
+                                    <div class="d-flex form-group justify-content-end">
+                                        <button class="btn text-white mr-5 mt-4" onclick="status()" type="button">Check
+                                            Status</button>
                                     </div>
                                 </div>
+                                <script type="text/javascript"> function checkIn() {
+                                        var num = document.getElementById("f-number").value;
+                                        var date = $('#f-date').datepicker().data('datepicker');
+                                        var fDateS = datepicker.selectedDates[0];
+                                        localStorage.setItem("f-date", fDateS);
+                                        localStorage.setItem("f-number", num);
+                                        document.location.href = "checkIn.html"
 
+                                    }</script>
                             </form>
                         </div>
                     </div>
@@ -345,18 +309,19 @@
                     <div class="col-lg-6">
                         <h4 class="mb-3">New: 50,000 bonus miles</h4>
                         <hr class="bg-2 mb-4 mt-0 mx-auto" style="width: 80px; height: 2px;">
+                        <p>Make the most of your trip with PeakPoints, our award-winning loyalty program.</p>
                         <p>
                             Get more with this new bonus miles offer when you apply for PeakPoints today, plus:
-                        <ul>
-                            <li>Unlimited reward seats</li>
-                            <li>20% off inflight purchases</li>
-                            <li>Three checked bags free</li>
-                            <li>and many more...</li>
-                        </ul>
+                            <ul>
+                                <li>Unlimited reward seats</li>
+                                <li>20% off inflight purchases</li>
+                                <li>Three checked bags free</li>
+                                <li>and many more...</li>
+                            </ul>
                         </p>
                         <div class="d-flex form-group justify-content-end">
-                                <a href="peakpoints.html" class="btn bg-2 text-white mr-5 mt-4">Apply Now</a>
-                            </div>
+                            <a href="peakpoints.html" class="btn bg-2 text-white mr-5 mt-4">Apply Now</a>
+                        </div>
                     </div>
                 </div>
                 <hr class="my-2">
@@ -369,14 +334,15 @@
                         <h4 class="mb-3"> Join The Peak Family</h4>
                         <hr class="bg-2 mb-4 mt-0 mx-auto" style="width: 80px; height: 2px;">
                         <p>
-                                Flight benefits, industry discounts and more await you when you join the Peak family.
+                            Flight benefits, industry discounts and more await you when you join the Peak family.
                         </p>
                         <div class="d-flex form-group justify-content-end">
-                                <a href="careers.html" class="btn bg-2 text-white mr-5 mt-4">Learn More</a>
-                            </div>
+                            <a href="careers.html" class="btn bg-2 text-white mr-5 mt-4">Learn More</a>
+                        </div>
                     </div>
                     <div class="col-lg-6">
-                        <img class="img-fluid rounded d-none d-lg-block d-xl-block" src="assets/images/caleb-woods-R2lCJwGyqPQ-unsplash.jpg">
+                        <img class="img-fluid rounded d-none d-lg-block d-xl-block"
+                            src="assets/images/caleb-woods-R2lCJwGyqPQ-unsplash.jpg">
                     </div>
                 </div>
             </div>
@@ -521,6 +487,31 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <!--Firebase-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDo0D3BklDJCT8Rsrhuu8Rb4kbEAmDxlBs",
+            authDomain: "peak-b6a99.firebaseapp.com",
+            databaseURL: "https://peak-b6a99.firebaseio.com",
+            projectId: "peak-b6a99",
+            storageBucket: "peak-b6a99.appspot.com",
+            messagingSenderId: "549721592599",
+            appId: "1:549721592599:web:17ee387edc71abc6089d52",
+            measurementId: "G-H7CGTPW4K3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
     <!--  Custom Scripts -->
     <script src="assets/js//autocomplete.min.js"></script>
     <script src="assets/js/app.js"></script>

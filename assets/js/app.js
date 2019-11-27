@@ -9,6 +9,11 @@
 
 //Change date input on flightType change
 $(document).ready(function () {
+    var flightType; //= document.getElementsByName("flightType");
+    var fFrom; //= document.getElementById("f-from");
+    var fTo; //= document.getElementById("f-to");
+    var pCount;//= document.getElementById("f-travellers");
+    //console.log(document.getElementById("#f-date").selectedDates[0]);
     // on flightType change configuration
     $("input[type=radio][name=flightType]").change(function () {
         if (this.value == "round-trip") {
@@ -22,7 +27,7 @@ $(document).ready(function () {
             $("#f-date").attr("disabled", false);
             $("#f-date").attr("placeholder", "Depart ⁠— Return");
             $("#f-date").val('');
-            date.clear();
+            
             date.show();
         }
         else {
@@ -35,7 +40,7 @@ $(document).ready(function () {
             $("#f-date").attr("disabled", false);
             $("#f-date").attr("placeholder", "Departure date");
             $("#f-date").val('');
-            date.clear();
+           
             date.show();
         }
     })
