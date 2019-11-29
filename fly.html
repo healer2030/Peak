@@ -1,0 +1,298 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Peak: An">
+    <meta name="author" content="Somtochukwu Nwagbata">
+    <meta name="robots" content="index,follow">
+    <meta content="True" name="HandheldFriendly">
+    <meta content="320" name="MobileOptimized">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="mobile-web-app-capable">
+    <!--Favicon-->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <title>Peak Airlines</title>
+    <!--Core BootStrap, font, and custom styles-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <link href="assets/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/css/brands.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <!--Define navbar styles and add Peak logo-->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-1">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img id="logo" src="assets/images/peak.svg"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="dropdown-divider"></div>
+                    <ul class="navbar-nav ml-auto pl-5">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="schedule.html">Flight Schedules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="deals.html">Deals and Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="peakpoints.html">PeakPoints</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container my-5">
+        <h1>Where We Fly</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li>Hartsfield-Jackson Atlanta International Airport, Atlanta, GA</li>
+                    <li>Birmingham-Shuttlesworth International Airport, Birmingham, AL</li>
+                    <li>Miami International Airport, Miami, FL</li>
+                    <li>Huntsville International Airport, Huntsville, AL</li>
+                    <li>Orlando International Airport, Orlando, FL</li>
+                    <li>Nashville International Airport, Nashville, TN</li>
+                    <li>Memphis International Airport, TN</li>
+                    <li>Charlotte Douglas International Airport, Charlotte, NC</li>
+                    <li>Raleigh-Durham International Airport, Raleigh, NC
+                    <li>Greenville-Spartanburg International Airport, Greer, SC</li>
+                    <li>Jacksonville International Airport, Jacksonville, FL</li>
+                    <li>Daytona Beach International Airport, Daytona Beach, FL</li>
+                    <li>Destin-Fort Walton Beach Airport, Eglin AFB, FL</li>
+                    <li>Key West International Airport, Key West, FL</li>
+                    <li>Orlando Melbourne International Airport, Melbourne, FL</li>
+                    <li>Dothan Regional Airport, Dothan, AL</li>
+                    <li>Mobile Downtown Airport, Mobile, AL</li>
+                    <li>Montgomery Airport, Montgomery, AL</li>
+                    <li>Chattanooga Airport, Chattanooga, AL</li>
+                    <li>McGhee Tyson Airport, Knoxville, TN</li>
+                    <li>Tri-Cities Airport, TN</li>
+                    <li>Charleston International Airport, Charleston, SC</li>
+                    <li>Columbia Metropolitan Airport, West Columbia, SC</li>
+                    <li>Hilton Head Island Airport, SC</li>
+                    <li>Myrtle Beach International Airport, FL</li>
+                    <li>Albert J Ellis Airport, NC</li>
+                    <li>Asheville Regional Airport, NC</li>
+                    <li>Fayetteville Regional Airport, NC</li>
+                    <li>Piedmont Triad International Airport, Greensboro, NC</li>
+                    <li>Coastal Carolina Regional Airport, New Bern, NC</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div id="map"></div>
+                <script>
+                    function initMap() {
+                        var center = { lat: 33.640411, lng: -84.419853 };
+
+                        var locations = [
+                            ['Hartsfield-Jackson Atlanta International Airport, Atlanta, GA', 33.640411, -84.419853],
+                            ['Birmingham-Shuttlesworth International Airport, Birmingham, Al', 33.5624269, -86.7563147],
+                            ['Miami International Airport, Miami, FL', 25.7958771, -80.2892396],
+                            ['Huntsville International Airport, Huntsville, AL', 34.6403373, -86.7778786,],
+                            ['Orlando International Airport, Orlando, FL', 28.4311624, -81.3102717],
+                            ['Nashville International Airport, Nashville, TN', 36.131687, -86.668823],
+                            ['Memphis International Airport, TN', 35.040031, -89.981873],
+                            ['Charlotte Douglas International Airport, Charlotte, NC', 35.213890, -80.943054],
+                            ['Raleigh-Durham International Airport, Raleigh, NC', 35.8800833, -78.790185],
+                            ['Greenville-Spartanburg International Airport, Greer, SC', 34.8959052, -82.2194225],
+                            ['Jacksonville International Airport, Jacksonville, FL', 30.4940759, -81.6901255],
+                            ['Daytona Beach International Airport, Daytona Beach, FL', 29.1832181, -81.055416],
+                            ['Destin-Fort Walton Beach Airport, Eglin AFB, FL', 30.4954597, -86.5520351],
+                            ['Key West International Airport, Key West, FL', 24.5536756, -81.7571624],
+                            ['Orlando Melbourne International Airport, Melbourne, FL', 28.1012706, -80.6472667],
+                            ['Dothan Regional Airport, Dothan, AL', 31.3148784, -85.4509097],
+                            ['Mobile Downtown Airport, Mobile, AL', 30.6370698, -88.0810182],
+                            ['Montgomery Airport, Montgomery, AL', 32.3050758, -86.392824],
+                            ['Chattanooga Airport, Chattanooga, AL', 35.037453, -85.1991999],
+                            ['McGhee Tyson Airport, Knoxville, TN', 35.8108373, -83.9960777],
+                            ['Tri-Cities Airport, TN', 36.4809185, -82.4105807],
+                            ['Charleston International Airport, Charleston, SC', 32.8942721, -80.0403477],
+                            ['Columbia Metropolitan Airport, West Columbia, SC', 33.9419214, -81.1241902],
+                            ['Hilton Head Island Airport, SC', 32.2248521, -80.6993535],
+                            ['Myrtle Beach International Airport', 33.6822063, -78.930083],
+                            ['Albert J Ellis Airport, NC', 34.829136, -77.609073],
+                            ['Asheville Regional Airport, NC', 35.4349006, -82.5400428],
+                            ['Fayetteville Regional Airport, NC', 34.9910709, -78.8892777],
+                            ['Piedmont Triad International Airport, Greensboro, NC', 36.1043714, -79.9373692],
+                            ['Coastal Carolina Regional Airport, New Bern, NC', 35.0776499, -77.0403892],
+                        ];
+
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 5,
+                            center: center
+                        });
+                        var infowindow = new google.maps.InfoWindow({});
+                        var marker, count;
+                        for (count = 0; count < locations.length; count++) {
+                            marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(locations[count][1], locations[count][2]),
+                                map: map,
+                                title: locations[count][0]
+                            });
+                            google.maps.event.addListener(marker, 'click', (function (marker, count) {
+                                return function () {
+                                    infowindow.setContent(locations[count][0]);
+                                    infowindow.open(map, marker);
+                                }
+                            })(marker, count));
+                        }
+                    }</script>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="font-small navbar-dark bg-dark-1 text-white">
+
+        <div class="bg-2">
+            <div class="container">
+
+                <!-- Grid row-->
+                <div class="row py-2 d-flex align-items-center">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-3">
+                        <h6 class="mb-0">Get connected with us on social networks!</h6>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                        <!-- Facebook -->
+                        <a class="fb-ic text-white" href="https://facebook.com/Official-Peak-Airlines">
+                            <i class="fab fa-facebook-f white-text mr-4"> </i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic text-white" href="https://twitter.com/Peak">
+                            <i class="fab fa-twitter white-text mr-4"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic text-white" href="https://instagram.com/PeakAirlines">
+                            <i class="fab fa-instagram white-text mr-4"> </i>
+                        </a>
+                        <!--Linkedin -->
+                        <a class="li-ic text-white" href="https://linkedin.com/PeakAirlines">
+                            <i class="fab fa-linkedin-in white-text"> </i>
+                        </a>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row-->
+
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Get To Know Us</h6>
+                    <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
+                    
+                    <p>
+                        <a class="text-white" href="careers.html">Careers</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="#">Where We Fly</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="contact.html">Contact Us</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4 text-center">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Customer Service</h6>
+                    <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="text-white" href="schedule.html">Flight Schedules</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="lost.html">Traveling with Infants</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="pur.html">Purchasing & Refunds</a>
+                    </p>
+
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4 text-center">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Policies</h6>
+                    <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="text-white" href="privacy.html">Privacy Policy</a></p>
+                    <p>
+                        <a class="text-white" href="terms.html">Terms of Service</a></p>
+                    <p>
+                        <a class="text-white" href="bagpol.html">Baggage Policies</a></p>
+                    <p>
+                        <a class="text-white" href="csp.html">Customer Service Plan</a></p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="text-white text-center bg-1">&copy;
+            <script>
+                new Date().getFullYear() > 2018 && document.write(new Date().getFullYear());
+            </script>
+            Peak Airlines
+            LLC. All Rights Reserved.
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+    <!--Bootstrap and jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!--  Custom Scripts -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnoDV8LDToZ4VkXfCeVoetiCIx6mTs-RI&callback=initMap">
+        </script>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
