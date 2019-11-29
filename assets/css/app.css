@@ -586,7 +586,6 @@ background: linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/
   .selectize-dropdown .option,
   .selectize-dropdown [data-disabled],
   .selectize-dropdown [data-disabled] [data-selectable].option {
-    cursor: inherit;
     opacity: 0.5;
   }
   .selectize-dropdown [data-selectable].option {
@@ -614,6 +613,7 @@ background: linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 200px;
+    background-color: white;
     -webkit-overflow-scrolling: touch;
   }
   .selectize-control.single .selectize-input,
