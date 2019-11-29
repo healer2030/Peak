@@ -42,8 +42,8 @@
                     <div class="dropdown-divider"></div>
                     <ul class="navbar-nav ml-auto pl-5">
                             <li class="nav-item">
-                                    <a class="nav-link text-white" href="schedule.html">Flight Schedules</a>
-                                </li>
+                            <a class="nav-link text-white" href="index.html#home">Book Flight</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="credits.html">Credits</a>
                         </li>
@@ -72,11 +72,6 @@
                                 <a class="nav-link reset-link bg-1 text-white" id="checkIn-tab" data-toggle="tab"
                                     href="#checkIn" role="tab" aria-controls="checkIn"
                                     aria-selected="false">Check-in</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link reset-link bg-1 text-white" id="status-tab" data-toggle="tab"
-                                    href="#status" role="tab" aria-controls="flight status" aria-selected="false">Flight
-                                    status</a>
                             </li>
                         </ul>
                     </nav>
@@ -247,37 +242,6 @@
                                     }</script>
                             </form>
 
-                        </div>
-
-                        <div class="tab-pane text-white fade bg-2" id="status" role="tabpanel"
-                            aria-labelledby="status-tab">
-                            <form id="status" method="POST" action="" autocomplete="off">
-                                <div class="form-row">
-                                    <div class="form-group col-sm-6">
-                                        <label for="f-from">Flight Number</label>
-                                        <input type="text" class="form-control" id="f-number"
-                                            placeholder="Flight Number" required>
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <label for="f-depart">Flight Date</label>
-                                        <input type="text" class="form-control" id="s-date" placeholder="Date"
-                                            readonly="readonly" required>
-                                    </div>
-                                    <div class="d-flex form-group justify-content-end">
-                                        <button class="btn text-white mr-5 mt-4" onclick="status()" type="button">Check
-                                            Status</button>
-                                    </div>
-                                </div>
-                                <script type="text/javascript"> function checkIn() {
-                                        var num = document.getElementById("f-number").value;
-                                        var date = $('#f-date').datepicker().data('datepicker');
-                                        var fDateS = datepicker.selectedDates[0];
-                                        localStorage.setItem("f-date", fDateS);
-                                        localStorage.setItem("f-number", num);
-                                        document.location.href = "checkIn.html"
-
-                                    }</script>
-                            </form>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,504 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Peak: An">
+    <meta name="author" content="Somtochukwu Nwagbata">
+    <meta name="robots" content="index,follow">
+    <meta content="True" name="HandheldFriendly">
+    <meta content="320" name="MobileOptimized">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="mobile-web-app-capable">
+    <!--Favicon-->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <title>Peak Airlines</title>
+    <!--Core BootStrap, font, and custom styles-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <link href="assets/css/all.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header>
+        <!--Define navbar styles and add Peak logo-->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-1">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img id="logo" src="assets/images/peak.svg"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="dropdown-divider"></div>
+                    <ul class="navbar-nav ml-auto pl-5">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.html#home">Book Flight</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="credits.html">Credits</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="peakpoints.html">PeakPoints</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container py-5">
+        <h1 class="text-left">Flight Schedules:
+            <script>document.write(localStorage.getItem("fFrom"));</script> <i style="font-size: 1.75rem;"
+                class="fas fa-plane"></i>
+            <script>document.write(localStorage.getItem("fTo"))</script>
+        </h1>
+        <hr>
+        <section class="mb-3 mt-0">
+            <h2 class="text-left mt-2 display-3">Depart</h2>
+            <hr>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #3512</p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">7:00 <small>AM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">9:00 <small>AM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$129 (<small
+                                class="text-muted"><s>$169</s>)</small></p>
+                        <div class="form-group justify-content-end one-way">
+                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                        </div>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #1007 <span class="badge bg-3 text-white">Lowest Fare</span></p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">7:30 <small>AM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">9:30 <small>AM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$119 (<small
+                                class="text-muted"><s>$159</s>)</small></p>
+                        <div class="form-group justify-content-end one-way">
+                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                        </div>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #6666</p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">7:45 <small>AM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">10:00 <small>AM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$149 (<small
+                                class="text-muted"><s>$189</s>)</small></p>
+                        <div class="form-group justify-content-end pay-button one-way">
+                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                        </div>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #4201</p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">8:45 <small>AM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">11:00 <small>AM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$139 (<small
+                                class="text-muted"><s>$179</s>)</small></p>
+                        <div class="form-group justify-content-end one-way">
+                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                        </div>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #6991</p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">12:00 <small>PM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">2:00 <small>PM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$129 (<small
+                                class="text-muted"><s>$169</s>)</small></p>
+                        <div class="form-group justify-content-end one-way">
+                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                        </div>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #6969</p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">3:00 <small>PM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">5:00 <small>PM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$129 (<small
+                                class="text-muted"><s>$169</s>)</small></p>
+                        <div class="form-group justify-content-end one-way">
+                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                        </div>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </section>
+
+        <section class="return mt-5">
+            <h2 class="text-left mb-1 mt-2 display-3">Return</h2>
+            <hr>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #3512</p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">7:00 <small>AM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">9:00 <small>AM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$129 (<small
+                                class="text-muted"><s>$169</s>)</small></p>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #1007</p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">7:30 <small>AM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">9:30 <small>AM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$119 (<small
+                                class="text-muted"><s>$159</s>)</small></p>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #6666</p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">7:45 <small>AM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">10:00 <small>AM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$149 (<small
+                                class="text-muted"><s>$189</s>)</small></p>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #4201 <span class="badge bg-3 text-white">Lowest Fare</span></p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">8:45 <small>AM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">11:00 <small>AM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$139 (<small
+                                class="text-muted"><s>$179</s>)</small></p>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #6991</p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">12:00 <small>PM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">2:00 <small>PM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$129 (<small
+                                class="text-muted"><s>$169</s>)</small></p>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted">Flight Number: #6969</p>
+                <div class="d-flex  row">
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="display-4 align-self-center py-0 my-0">3:00 <small>PM</small></p>
+                        <span class="align-self-center" style="font-size: 2rem;"><i
+                                class="fas fa-angle-right"></i></span>
+                        <p class="display-4 align-self-center py-0 my-0">5:00 <small>PM</small></p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-around">
+                        <p class="align-self-center mb-0" style="font-size: 2rem;">$129 (<small
+                                class="text-muted"><s>$169</s>)</small></p>
+                        <div class="return">
+                            <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                            </label>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="form-group justify-content-center">
+                <a href="flightPay.html" class="btn bg-2 btn-lg btn-block text-white mr-5 ml-2 mt-4">Book Now</a>
+            </div>
+        </section>
+
+
+    </main>
+    <!-- Footer -->
+    <footer class="font-small navbar-dark bg-dark-1 text-white">
+
+        <div class="bg-2">
+            <div class="container">
+
+                <!-- Grid row-->
+                <div class="row py-2 d-flex align-items-center">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-3">
+                        <h6 class="mb-0">Get connected with us on social networks!</h6>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                        <!-- Facebook -->
+                        <a class="fb-ic text-white" href="https://facebook.com/Official-Peak-Airlines">
+                            <i class="fab fa-facebook-f white-text mr-4"> </i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic text-white" href="https://twitter.com/Peak">
+                            <i class="fab fa-twitter white-text mr-4"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic text-white" href="https://instagram.com/PeakAirlines">
+                            <i class="fab fa-instagram white-text mr-4"> </i>
+                        </a>
+                        <!--Linkedin -->
+                        <a class="li-ic text-white" href="https://linkedin.com/PeakAirlines">
+                            <i class="fab fa-linkedin-in white-text"> </i>
+                        </a>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row-->
+
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Get To Know Us</h6>
+                    <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
+
+                    <p>
+                        <a class="text-white" href="careers.html">Careers</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="fly.html">Where We Fly</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="contact.html">Contact Us</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4 text-center">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Customer Service</h6>
+                    <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="text-white" href="schedule.html">Flight Schedules</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="lost.html">Traveling with Infants</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="pur.html">Purchasing & Refunds</a>
+                    </p>
+
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4 text-center">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Policies</h6>
+                    <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="text-white" href="privacy.html">Privacy Policy</a></p>
+                    <p>
+                        <a class="text-white" href="terms.html">Terms of Service</a></p>
+                    <p>
+                        <a class="text-white" href="bagpol.html">Baggage Policies</a></p>
+                    <p>
+                        <a class="text-white" href="csp.html">Customer Service Plan</a></p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="text-white text-center bg-1">&copy;
+            <script>
+                new Date().getFullYear() > 2018 && document.write(new Date().getFullYear());</script>
+            Peak Airlines
+            LLC. All Rights Reserved.
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+    <!--Bootstrap and jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!--  Custom Scripts -->
+
+    <script src="assets/js/app.js"></script>
+    <script type="text/javascript" defer>
+        if (localStorage.getItem("flightType") != "round-trip") {
+            $(function () {
+                $(".one-way").css("display", "flex");
+            });
+            $(function () {
+                $(".return").css("display", "none");
+            });
+        } else {
+            $(function () {
+                $(".return").css("display", "block");
+            });
+            $(function () {
+                $(".one-way").css("display", "none");
+            });
+
+        }</script>
+
+</body>
+
+</html>

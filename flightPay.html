@@ -53,16 +53,36 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main style="margin-top: 7em;">
         <div class="container">
-            <h1 class="text-left">Peak Airlines Job Application</h1>
+            <h2 class="text-left mt-5">Review & Pay</h2>
             <hr>
-            <div class="row py-2">
+            <div class="row py-1">
                 <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Trip Total</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0 text-left">Flights</h6>
+                                <small class="text-muted">FBLA Day Discount: All Flights $100</small>
+                            </div>
+                            <span class="text-muted">$100 X
+                                <script>document.write(localStorage.getItem("pCount"))</script></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total (USD)</span>
+                            <strong>$
+                                <script>document.write(localStorage.getItem("pCount") * 100)</script> <small>(taxes
+                                    included)</small></strong>
+                        </li>
+                    </ul>
                 </div>
                 <div class="col-md-8 order-md-1">
-                    <h4 class="mb-3 text-left">Personal information</h4>
-                    <form class="">
+                    <h4 class="mb-3 text-left">Passenger information</h4>
+                    <p><small>This Information will be on all the flight tickets</small></p>
+                    <form class="" autocomplete="off">
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">First name</label>
@@ -96,6 +116,11 @@
                             </div>
                         </div>
 
+                        <div class="mb-3">
+                            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                        </div>
+
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="state">State</label>
@@ -122,60 +147,65 @@
                         </div>
                         <hr class="mb-4">
 
-                        <h4 class="mb-3 text-left">Position</h4>
+                        <h4 class="mb-3 text-left">Payment</h4>
+
+                        <div class="d-block my-3">
+                            <div class="custom-control custom-radio">
+                                <input id="peak" name="paymentMethod" type="radio" class="custom-control-input" checked
+                                    required>
+                                <label class="custom-control-label" for="peak">PeakPoints <small>(10,000 for this
+                                        trip)</small></label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
+                                    required>
+                                <label class="custom-control-label" for="credit">Credit card</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
+                                    required>
+                                <label class="custom-control-label" for="debit">Debit card</label>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="cc-name">Position You Are Applying For</label>
+                                <label for="cc-name">Name on card</label>
                                 <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                                <small class="text-muted">Full name as displayed on card</small>
                                 <div class="invalid-feedback">
-                                    Position required
+                                    Name on card is required
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="cc-number">Available Start Date</label>
+                                <label for="cc-number">Credit card number</label>
                                 <input type="text" class="form-control" id="cc-number" placeholder="" required>
                                 <div class="invalid-feedback">
-                                    Date required
+                                    Credit card number is required
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="mb-3 col-md-12">
-                                <div class="custom-control custom-radio">
-                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
-                                        checked required>
-                                    <label class="custom-control-label" for="credit">Full Time</label>
+                            <div class="col-md-3 mb-3">
+                                <label for="cc-expiration">Expiration</label>
+                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Expiration date required
                                 </div>
-                                <div class="custom-control custom-radio">
-                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
-                                        required>
-                                    <label class="custom-control-label" for="debit">Part Time</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input id="other" name="paymentMethod" type="radio" class="custom-control-input"
-                                        required>
-                                    <label class="custom-control-label" for="other">Temporary/Seasonal</label>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="cc-cvv">CVV</label>
+                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required
+                                    maxlength="3">
+                                <div class="invalid-feedback">
+                                    Security code required
                                 </div>
                             </div>
                         </div>
                         <hr class="mb-4">
-
-                        <h4 class="mb-3 text-left">Résumé</h4>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>Please upload a résumé detailing your education, employment history, and references.
-                                </p>
-                                <div class="form-group">
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="mb-4">
-
-                        <button class="btn bg-2 text-white btn-lg btn-block" onclick="success()" type="submit">Join Peak
-                            Airlines</button>
+                        <button class="btn bg-2 text-white btn-lg btn-block" onclick="success()" type="submit">Complete
+                            Purchase</button>
                         <script>function success() {
-                                document.location.href = "success.html"
+                                document.location.href = "paySuccess.html"
                             }</script>
                     </form>
                 </div>
@@ -240,7 +270,7 @@
                     <!-- Links -->
                     <h6 class="text-uppercase font-weight-bold">Get To Know Us</h6>
                     <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
-                    
+
                     <p>
                         <a class="text-white" href="careers.html">Careers</a>
                     </p>
@@ -269,7 +299,7 @@
                     <p>
                         <a class="text-white" href="pur.html">Purchasing & Refunds</a>
                     </p>
-                    
+
 
                 </div>
                 <!-- Grid column -->
@@ -319,6 +349,8 @@
     <!--  Custom Scripts -->
 
     <script src="assets/js/app.js"></script>
+    <!--Datetime picker script-->
+    <script src="assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
 </body>
 
 </html>
