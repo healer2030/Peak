@@ -53,88 +53,152 @@
             </div>
         </nav>
     </header>
-    <main class="container" style="margin-top: 7em;">
-        <h1 class="text-left">Join Our Team</h1>
-        <hr>
-        <section id="ca-intro">
-            <h3 class="text-left mb-3">Why Peak</h3>
-            <hr class="bg-2 mb-4 mt-0 text-left" style="width: 120px; height: 2px; margin: 0px;">
-            <p>We're excited that you’re exploring career opportunities with Peak Airlines. With over 3,000
-                employees across the United States, we're always looking for talented, driven, passionate individuals to
-                join
-                our team.</p>
-            <p>Our team members are the key to our success. Whether they work behind the scenes or are out there
-                delivering great service to our guests; each is tireless in their pursuit of excellence.</p>
-        </section>
-        <section id="ca-roles" class="my-5">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <img class="rounded-circle" src="assets/images/free-to-use-sounds-0DVadbHA8fE-unsplash.jpg">
-                    <h4 class="text-center mt-3">Flight Attendants</h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <img class="rounded-circle" src="assets/images/milkovi-mef-_dKTZjU-unsplash.jpg">
-                    <h4 class="text-center mt-3">Pilots</h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <img class="rounded-circle" src="assets/images/nesa-by-makers-kwzWjTnDPLk-unsplash.jpg">
-                    <h4 class="text-center mt-3">Corporate</h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <img class="rounded-circle" src="assets/images/calle-macarone-D7rdbx8w6Og-unsplash.jpg">
-                    <h4 class="text-center mt-3">Airport Operations</h4>
-                </div>
-            </div>
-        </section>
-        <section id="ca-apply" class="mt-3">
-            <div class="row">
-                <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                    <img class="img-fluid d-none d-lg-block d-xl-block" src="assets/images/free-to-use-sounds-0DVadbHA8fE-unsplash.jpg">
-                </div>
-                <div class="col-lg-8">
-                    <h3 class="text-left mb-3">How To Apply</h3>
-                    <hr class="bg-2 mb-4 mt-0 text-left" style="width: 120px; height: 2px; margin: 0px;">
-                    <p>Apply online through our application form and we'll be in touch with you shortly</p>
-                    <div class="d-flex form-group justify-content-end">
-                            <a href="applypeak.html" class="btn bg-2 text-white mr-5 mt-2">Apply Now</a>
-                        </div>
-                </div>
-            </div>
-        </section>
-        <section id="ca-required">
-            <h3 class="text-left mb-3">What You'll Need</h3>
-            <hr class="bg-2 mb-4 mt-0 text-left" style="width: 120px; height: 2px; margin: 0px;">
-            <p>Here are the basic requirements for applying for a Job at Peak.</p>
-            <ul>
-                <li>High School Diploma or GED</li>
-                <li>At least 20 years old when applying</li>
-                <li>Legally authorized to work in the U.S.</li>
-                <li>A valid passport with at least 6 months validity <small class="text-muted">(if applying for a flight
-                        attendant or pilot positions)</small></li>
-            </ul>
-        </section>
-        <section id="ca-perks">
-            <h3 class="text-left mb-3">Work Perks</h3>
-            <hr class="bg-2 mb-4 mt-0 text-left" style="width: 120px; height: 2px; margin: 0px;">
-            <div class="row">
-                <div class="col-md-6">
-                    <ul>
-                        <li><b>Travel Benefits: </b>You, your friends, and your family get travel privileges on Peak.
+    <main>
+        <div class="container">
+            <h1 class="text-left">PeakPoints Application</h1>
+            <hr>
+            <div class="row py-5">
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Total</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">PeakPoints Loyalty Program</h6>
+                                <small class="text-muted">Billed yearly</small>
+                            </div>
+                            <span class="text-muted">$69</span>
                         </li>
-                        <li><b>Insurance: </b>We got you covered with medical, dental, and vision insurance.</li>
-                        <li><b>401K Plan: </b>Amazing retirement plan assistance provided at no cost to you. </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total (USD)</span>
+                            <strong>$69 per year</strong>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li><b>Paid Holidays: </b>Enjoy the holidays while getting paid.</li>
-                        <li><b>Paid Time Off: </b>Take some time off, with no worries about your wage.</li>
-                        <li><b>Discounts: </b>Get discounts throughout the entire travel industry.</li>
-                    </ul>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3 text-left">Personal information</h4>
+                    <form class="">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">First name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid first name is required.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName">Last name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="you@flypeak.com" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                            <div class="invalid-feedback">
+                                Please enter your address.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="state">State</label>
+                                <select class="custom-select d-block w-100" id="state" required>
+                                    <option value="">Choose...</option>
+                                    <option>Alabama</option>
+                                    <option>Florida</option>
+                                    <option>Georgia</option>
+                                    <option>North Carolina</option>
+                                    <option>South Carolina</option>
+                                    <option>Tennessee</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="zip">Zip</label>
+                                <input type="text" class="form-control" id="zip" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Zip code required.
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+
+                        <h4 class="mb-3 text-left">Payment</h4>
+
+                        <div class="d-block my-3">
+                            <div class="custom-control custom-radio">
+                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
+                                    checked required>
+                                <label class="custom-control-label" for="credit">Credit card</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
+                                    required>
+                                <label class="custom-control-label" for="debit">Debit card</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="cc-name">Name on card</label>
+                                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                                <small class="text-muted">Full name as displayed on card</small>
+                                <div class="invalid-feedback">
+                                    Name on card is required
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="cc-number">Credit card number</label>
+                                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Credit card number is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="cc-expiration">Expiration</label>
+                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Expiration date required
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="cc-cvv">CVV</label>
+                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Security code required
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        <button class="btn bg-2 text-white btn-lg btn-block" onclick="success()" type="submit">Join PeakPoints</button>
+                        <script>function success() {
+                            document.location.href = "success.html"
+                        }</script>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
     <!-- Footer -->
     <footer class="font-small navbar-dark bg-dark-1 text-white">
@@ -198,7 +262,7 @@
                         <a class="text-white" href="about.html">About Us</a>
                     </p>
                     <p>
-                        <a class="text-white" href="#">Careers</a>
+                        <a class="text-white" href="careers.html">Careers</a>
                     </p>
                     <p>
                         <a class="text-white" href="fly.html">Where We Fly</a>
