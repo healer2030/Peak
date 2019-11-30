@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,8 +37,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet" />
-    <link href="assets/css/fontawesome.css" rel="stylesheet">
-    <link href="assets/css/brands.css" rel="stylesheet">
+    <link href="assets/css/all.min.css" rel="stylesheet">
 
 </head>
 
@@ -58,8 +58,8 @@
                             <a class="nav-link text-white" href="index.html#home">Book a Flight</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link text-white" href="careers.html">Join The Team</a>
-                            </li>
+                            <a class="nav-link text-white" href="careers.html">Join The Team</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="peakpoints.html">PeakPoints</a>
                         </li>
@@ -68,7 +68,45 @@
             </div>
         </nav>
     </header>
-    <main></main>
+    <main class="container" style="margin-top: 7em;">
+        <h1 class="text-left">Thank You for flying with Peak</h1>
+        <h6 class="text-left"> Here are your reservation details:</h6>
+        <section id="details"></section>
+        <div class="detail card mb-3">
+            <div class="row">
+                <p class="col text-center">Departure date:
+                    <script>var dateString = new Date(localStorage.getItem("fDateD")).toUTCString();
+                        dateString = dateString.split(' ').slice(0, 4).join(' ');
+                        document.write(dateString);</script>
+                </p>
+                <p class="col text-center">
+                    <script>var dateString2 = new Date(localStorage.getItem("fDateR")).toUTCString();
+                        dateString2 = dateString2.split(' ').slice(0, 4).join(' '); if (localStorage.getItem("fDateR") != undefined) { document.write("Return Date: " + dateString2) }</script>
+                </p>
+            </div>
+            <h1 class="py-1 my-3">
+                <script>document.write(localStorage.getItem("fFrom"));</script> <i style="font-size: 1.75rem;"
+                    class="fas fa-plane"></i>
+                <script>document.write(localStorage.getItem("fTo"))</script>
+            </h1>
+            <script>
+                    function generate_random_string(string_length) {
+                        let random_string = '';
+                        let random_ascii;
+                        let ascii_low = 65;
+                        let ascii_high = 90
+                        for (let i = 0; i < string_length; i++) {
+                            random_ascii = Math.floor((Math.random() * (ascii_high - ascii_low)) + ascii_low);
+                            random_string += String.fromCharCode(random_ascii)
+                        }
+                        return random_string
+                    }</script>
+            <div class="row">
+                <p class="col text-center"># Passenger(s): <script>document.write(localStorage.getItem("pCount"));</script></p>
+                <p class="col text-center">Reservation Code: <script>document.write(generate_random_string(6));</script></p>
+            </div>
+        </div>
+    </main>
     <!-- Footer -->
     <footer class="font-small navbar-dark bg-dark-1 text-white">
 
@@ -127,17 +165,17 @@
                     <!-- Links -->
                     <h6 class="text-uppercase font-weight-bold">Get To Know Us</h6>
                     <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
-                    
+
                     <p>
                         <a class="text-white" href="careers.html">Careers</a>
                     </p>
                     <p>
                         <a class="text-white" href="fly.html">Where We Fly</a>
                     </p>
-                    
+
                     <p>
-                            <a class="text-white" href="credits.html">Credits</a>
-                        </p>
+                        <a class="text-white" href="credits.html">Credits</a>
+                    </p>
 
                 </div>
                 <!-- Grid column -->
@@ -149,15 +187,15 @@
                     <h6 class="text-uppercase font-weight-bold">Customer Service</h6>
                     <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
                     <p>
-                            <a class="text-white" href="contact.html">Contact Us</a>
-                        </p>
+                        <a class="text-white" href="contact.html">Contact Us</a>
+                    </p>
                     <p>
                         <a class="text-white" href="lost.html">Traveling with Infants</a>
                     </p>
                     <p>
                         <a class="text-white" href="pur.html">Purchasing & Refunds</a>
                     </p>
-                    
+
 
                 </div>
                 <!-- Grid column -->
@@ -197,7 +235,7 @@
         <!-- Copyright -->
 
     </footer>
-    <!-- Footer --> 
+    <!-- Footer -->
     <!--Bootstrap and jQuery-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
