@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -12,7 +13,22 @@
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="mobile-web-app-capable">
     <!--Favicon-->
-    <meta name="msapplication-TileColor" content="#2b5797">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <title>Peak Airlines</title>
     <!--Core BootStrap, font, and custom styles-->
@@ -40,11 +56,11 @@
                     <div class="dropdown-divider"></div>
                     <ul class="navbar-nav ml-auto pl-5">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="index.html#home">Book Flight</a>
+                            <a class="nav-link text-white" href="index.html#home">Book a Flight</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="credits.html">Credits</a>
-                        </li>
+                                <a class="nav-link text-white" href="careers.html">Join The Team</a>
+                            </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="peakpoints.html">PeakPoints</a>
                         </li>
@@ -62,98 +78,46 @@
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">Trip Total</span>
                     </h4>
+
                     <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between pb-0 mb-0">
+                            <p>
+                                <script>document.write(localStorage.getItem("pCount"));</script> Passenger(s)
+                            </p>
+                        </li>
+
                         <li class="list-group-item d-flex justify-content-between lh-sm">
                             <div>
                                 <h6 class="my-0 text-left">Flights</h6>
-                                <small class="text-muted">FBLA Day Discount: All Flights $100</small>
+                                <small class="text-muted">FBLA Discount: All Flights $109.99</small>
                             </div>
-                            <span class="text-muted">$100 X
-                                <script>document.write(localStorage.getItem("pCount"))</script></span>
+                            <span class="text-muted">$
+                                <script>document.write((localStorage.getItem("pCount") * 109.99).toLocaleString(undefined, { maximumFractionDigits: 2 }));</script>
+                                </script></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Total (USD)</span>
                             <strong>$
-                                <script>document.write(localStorage.getItem("pCount") * 100)</script> <small>(taxes
+                                <script>document.write((localStorage.getItem("pCount") * 109.99).toLocaleString(undefined, { maximumFractionDigits: 2 }));</script>
+                                <small>(taxes
                                     included)</small></strong>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-8 order-md-1">
-                    <h4 class="mb-3 text-left">Passenger information</h4>
-                    <p><small>This Information will be on all the flight tickets</small></p>
                     <form class="" autocomplete="off">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="firstName">First name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                                <div class="invalid-feedback">
-                                    Valid first name is required.
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="lastName">Last name</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                                <div class="invalid-feedback">
-                                    Valid last name is required.
-                                </div>
-                            </div>
+                        <div id="passengers">
+                            <h4 class="mb-3 text-left">Passenger Information</h4>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="you@flypeak.com" required>
-                            <div class="invalid-feedback">
-                                Please enter a valid email address.
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-                            <div class="invalid-feedback">
-                                Please enter your address.
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="state">State</label>
-                                <select class="custom-select d-block w-100" id="state" required>
-                                    <option value="">Choose...</option>
-                                    <option>Alabama</option>
-                                    <option>Florida</option>
-                                    <option>Georgia</option>
-                                    <option>North Carolina</option>
-                                    <option>South Carolina</option>
-                                    <option>Tennessee</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please provide a valid state.
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="zip">Zip</label>
-                                <input type="text" class="form-control" id="zip" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    Zip code required.
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="mb-4">
-
                         <h4 class="mb-3 text-left">Payment</h4>
 
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
                                 <input id="peak" name="paymentMethod" type="radio" class="custom-control-input" checked
                                     required>
-                                <label class="custom-control-label" for="peak">PeakPoints <small>(10,000 for this
+                                <label class="custom-control-label" for="peak">PeakPoints <small>(
+                                        <script>document.write((localStorage.getItem("pCount") * 2500).toLocaleString())</script>
+                                        for this
                                         trip)</small></label>
                             </div>
                             <div class="custom-control custom-radio">
@@ -202,7 +166,7 @@
                             </div>
                         </div>
                         <hr class="mb-4">
-                        <button class="btn bg-2 text-white btn-lg btn-block" onclick="success()" type="submit">Complete
+                        <button class="btn bg-2 text-white btn-lg btn-block" onclick="success()" type="button">Complete
                             Purchase</button>
                         <script>function success() {
                                 document.location.href = "paySuccess.html"
@@ -280,6 +244,9 @@
                     <p>
                         <a class="text-white" href="contact.html">Contact Us</a>
                     </p>
+                    <p>
+                            <a class="text-white" href="credits.html">Credits</a>
+                        </p>
 
                 </div>
                 <!-- Grid column -->
@@ -331,8 +298,7 @@
         <!-- Copyright -->
         <div class="text-white text-center bg-1">&copy;
             <script>
-                new Date().getFullYear() > 2018 && document.write(new Date().getFullYear());
-            </script>
+                new Date().getFullYear() > 2018 && document.write(new Date().getFullYear());</script>
             Peak Airlines
             LLC. All Rights Reserved.
         </div>
@@ -350,7 +316,17 @@
 
     <script src="assets/js/app.js"></script>
     <!--Datetime picker script-->
-    <script src="assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
+    <script type="text/javascript" defer>
+        var v = 1;
+        var myHtml = "";
+
+        for (var i = 1; i <= localStorage.getItem("pCount"); i++) {
+            //document.getElementById("passengers").append(Passenger);
+            myHtml += "<div class='passenger'><h5 class='mb-3 text-left'>Passenger " + i + "</h5><p></p><div class='row'><div class='col-md-6 mb-3'> <label for='firstName'>First name</label> <input type='text' class='form-control' id='firstName' placeholder='' value='' required><div class='invalid-feedback'> Valid first name is required.</div></div><div class='col-md-6 mb-3'> <label for='lastName'>Last name</label> <input type='text' class='form-control' id='lastName' placeholder='' value='' required><div class='invalid-feedback'> Valid last name is required.</div></div></div><div class='row'><div class='col-md-6 mb-3'><div class='form-group'> <label for='gender'>Gender</label> <select class='p-0 form-control' id='gender'><option>Select Gender</option><option>Male</option><option>Female</option> </select></div></div><div class='col-md-6 mb-3'> <label for=''>Date of Birth</label><div class='row'><div class='form-group col-4'> <select class='p-0 form-control' id='gender'><option>MM</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option> </select></div><div class='form-group col-4'> <select class='p-0 form-control' id='gender'><option>DD</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option> </select></div><div class='form-group col-4'> <input type='number' min='1900' max='2020' class='form-control' id='year' placeholder='YYYY' value='' required></div></div></div></div><hr class='mb-4'></div>";
+        }
+        $(function () {
+            $(myHtml).appendTo("#passengers");
+        });</script>
 </body>
 
 </html>
