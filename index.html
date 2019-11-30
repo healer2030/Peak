@@ -25,6 +25,7 @@
     <link href="assets/css/brands.css" rel="stylesheet">
     <!--Datetime picker style-->
     <link href="assets/css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 </head>
 
@@ -41,7 +42,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="dropdown-divider"></div>
                     <ul class="navbar-nav ml-auto pl-5">
-                            <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link text-white" href="index.html#home">Book Flight</a>
                         </li>
                         <li class="nav-item">
@@ -55,14 +56,14 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="">
         <section id="home" class="home">
             <!--Animate screen on load for .7s-->
             <!--Define tab menues for flight main options like booking-->
-            <div class="animate-reveal center">
+            <div class=" center">
                 <div class="container">
                     <!--Tablinks-->
-                    <nav class="nav-tab">
+                    <nav class="nav-tab animated bounceInUp slow">
                         <ul class="nav nav-tabs nav-fill bg-1" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link reset-link bg-1 text-white active" id="book-tab" data-toggle="tab"
@@ -77,21 +78,22 @@
                     </nav>
 
                     <!-- Tab content -->
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane text-white fade bg-2 show active" id="book" role="tabpanel"
+                    <div class="tab-content " id="myTabContent">
+                        <div class="tab-pane text-white animated bounceInUp fast bg-2 show active" id="book" role="tabpanel"
                             aria-labelledby="book-tab">
                             <form id="book-form" method="POST" action="" autocomplete="off">
 
                                 <div class="form-check form-check-radio">
 
                                     <label class="form-check-label" for="f-type2"> <input class="form-check-input"
-                                            type="radio" name="flightType" id="f-type2" value="round-trip" required><span
-                                            class="form-check-sign">Round trip</span>
+                                            type="radio" name="flightType" id="f-type2" value="round-trip"
+                                            required><span class="form-check-sign">Round trip</span>
                                     </label>
 
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="flightType" id="f-type"
-                                            value="one-way" required><span class="form-check-sign">One-way</span> </label>
+                                            value="one-way" required><span class="form-check-sign">One-way</span>
+                                    </label>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-sm-6 autocomplete">
@@ -217,13 +219,14 @@
                             </form>
                         </div>
 
-                        <div class="tab-pane text-white fade bg-2" id="checkIn" role="tabpanel"
+                        <div class="tab-pane text-white animated bounceInUp fast bg-2" id="checkIn" role="tabpanel"
                             aria-labelledby="checkIn-tab">
                             <form id="check-in" method="POST" action="">
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
                                         <label for="f-from">Last Name</label>
-                                        <input type="text" class="form-control" id="ci-name" placeholder="Last Name" required>
+                                        <input type="text" class="form-control" id="ci-name" placeholder="Last Name"
+                                            required>
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="f-to">Reservation Code</label>
@@ -247,10 +250,10 @@
                 </div>
             </div>
         </section>
-        <section id="about" class="container my-5 animate-reveal">
-            <h2 class="mb-3">The Peak Experience</h2>
+        <section id="about" class="container my-5 reveal">
+            <h2 class="mb-3 animated bounceInUp slow">The Peak Experience</h2>
             <hr class="bg-2 mb-4 mt-0 mx-auto" style="width: 80px; height: 2px;">
-            <p>
+            <p class="animated bounceInUp slow">
                 Welcome to Peak Airlines, the best airline with the cheapest prices. At Peak, we strive to bring the
                 best airline experience you never had before. Sign up for our reward program, PeakPoints, to gain access
                 to exclusive bonuses for our loyal guests with Peak. We hope you enjoy your time with Peak Airlines.
@@ -366,7 +369,7 @@
                     <!-- Links -->
                     <h6 class="text-uppercase font-weight-bold">Get To Know Us</h6>
                     <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
-                    
+
                     <p>
                         <a class="text-white" href="careers.html">Careers</a>
                     </p>
@@ -395,7 +398,7 @@
                     <p>
                         <a class="text-white" href="pur.html">Purchasing & Refunds</a>
                     </p>
-                    
+
 
                 </div>
                 <!-- Grid column -->
@@ -436,6 +439,7 @@
 
     </footer>
     <!-- Footer -->
+
     <!--Bootstrap and jQuery-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
