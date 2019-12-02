@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,8 +59,8 @@
                             <a class="nav-link text-white" href="index.html#home">Book a Flight</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link text-white" href="careers.html">Join The Team</a>
-                            </li>
+                            <a class="nav-link text-white" href="careers.html">Join The Team</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="peakpoints.html">PeakPoints</a>
                         </li>
@@ -68,8 +69,45 @@
             </div>
         </nav>
     </header>
-    <main>
-        
+    <script>
+        function generate_random_string(string_length) {
+            let random_string = '';
+            let random_ascii;
+            let ascii_low = 65;
+            let ascii_high = 68;
+            for (let i = 0; i < string_length; i++) {
+                random_ascii = Math.floor((Math.random() * (ascii_high - ascii_low)) + ascii_low);
+                random_string += String.fromCharCode(random_ascii)
+            }
+            return random_string
+        }
+        function getRandomArbitrary(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }</script>
+    <main class="container" style="margin-top: 7em;">
+        <h1 class="text-left">Thank You for flying with Peak</h1>
+        <h6 class="text-left"> Here is your Boarding Pass:</h6>
+        <div class="mb-3 card w-75">
+            <div class="row">
+                <div class="col-4">
+                    <small>Boarding Group</small>
+                    <h1 class="text-uppercase mt-1 mb-3 text-left pl-4" style="font-size: 4em;">
+                        <script>document.write(generate_random_string(1));</script>
+                    </h1>
+                    <h1 class="text-uppercase mt-1 mb-3 text-left pl-2" style="font-size: 4em;">
+                            <script>document.write(getRandomArbitrary(1, 61));</script>
+                    </h1>
+                    <small>Boarding Position</small>
+                    <p class="mb-0 pb-0"><script>document.write(localStorage.getItem("name"));</script></p>
+                    
+                </div>
+                <div class="col-8">
+                    <p style="display: flex;" class="float-left">Reservation #: <script>document.write(localStorage.getItem("ci-code"));</script></p>
+                    <img class="float-right w-50" src="assets/images/barcode.gif">
+                    
+                </div>
+            </div>
+        </div>
     </main>
     <!-- Footer -->
     <footer class="font-small navbar-dark bg-dark-1 text-white">
@@ -129,17 +167,17 @@
                     <!-- Links -->
                     <h6 class="text-uppercase font-weight-bold">Get To Know Us</h6>
                     <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
-                    
+
                     <p>
                         <a class="text-white" href="careers.html">Careers</a>
                     </p>
                     <p>
                         <a class="text-white" href="fly.html">Where We Fly</a>
                     </p>
-                    
+
                     <p>
-                            <a class="text-white" href="credits.html">Credits</a>
-                        </p>
+                        <a class="text-white" href="credits.html">Credits</a>
+                    </p>
 
                 </div>
                 <!-- Grid column -->
@@ -151,15 +189,15 @@
                     <h6 class="text-uppercase font-weight-bold">Customer Service</h6>
                     <hr class="bg-3 mb-4 mt-0 mx-auto" style="width: 60px;">
                     <p>
-                            <a class="text-white" href="contact.html">Contact Us</a>
-                        </p>
+                        <a class="text-white" href="contact.html">Contact Us</a>
+                    </p>
                     <p>
                         <a class="text-white" href="lost.html">Traveling with Infants</a>
                     </p>
                     <p>
                         <a class="text-white" href="pur.html">Purchasing & Refunds</a>
                     </p>
-                    
+
 
                 </div>
                 <!-- Grid column -->
@@ -199,7 +237,7 @@
         <!-- Copyright -->
 
     </footer>
-    <!-- Footer --> 
+    <!-- Footer -->
     <!--Bootstrap and jQuery-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
