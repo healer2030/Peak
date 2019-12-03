@@ -6,21 +6,39 @@
  * 2. Autocomplete text field
  */
 
-
-//Change date input on flightType change
+//Date and selectize plugins
 $(document).ready(function () {
-    var flightType; //= document.getElementsByName("flightType");
-    var fFrom; //= document.getElementById("f-from");
-    var fTo; //= document.getElementById("f-to");
-    var pCount;//= document.getElementById("f-travellers");
-    //console.log(document.getElementById("#f-date").selectedDates[0]);
-    // on flightType change configuration
+    var today = today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 
+    $('#f-depart').datepicker({
+        
+        modal: true,
+        header: true,
+        footer: true,
+        minDate: today,
+        maxDate: function () {
+            var date = new Date();
+            date.setDate(date.getDate() + 365);
+            return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        }
+    });
 
-    $('#f-to').selectize({sortField: 'text'});
-    $('#f-from').selectize({sortField: 'text'});
-    $('#f-froms').selectize({sortField: 'text'});
-    $('#f-tos').selectize({sortField: 'text'});
+    $('#f-return').datepicker({
+        
+        modal: true,
+        header: true,
+        footer: true,
+        minDate: today,
+        maxDate: function () {
+            var date = new Date();
+            date.setDate(date.getDate() + 365);
+            return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        }
+    });
+
+    $('#f-to').selectize({ sortField: 'text' });
+    $('#f-from').selectize({ sortField: 'text' });
+    $('#f-froms').selectize({ sortField: 'text' });
+    $('#f-tos').selectize({ sortField: 'text' });
+
 });
-
-
