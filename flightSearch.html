@@ -57,7 +57,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="index.html#home">Book a Flight</a>
                         </li>
-                         <li class="nav-item ml-3 mr-3">
+                        <li class="nav-item ml-3 mr-3">
                             <a class="nav-link text-white" href="peakpoints.html">PeakPoints</a>
                         </li>
                         <li class="nav-item">
@@ -68,6 +68,19 @@
             </div>
         </nav>
     </header>
+    <script>
+        /**
+     * Get a random integer between `min` and `max`.
+     * 
+     * RNG
+     * 
+     * @param {number} min - min number
+     * @param {number} max - max number
+     * @return {number} a random integer
+     */
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }</script>
     <main class="container" style="margin-top: 6em;">
         <h1 class="text-left">Flight Schedules:
         </h1>
@@ -79,8 +92,37 @@
                 <script>document.write(localStorage.getItem("fTo"))</script>
             </h2>
             <hr>
-            <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #3512</p>
+            <div id="depart-flights">
+                <div id="departing-0" class="mb-1">
+                    <p class="text-muted mb-0">Flight Number: #1007 <span class="badge bg-3 text-white">Lowest Fare</span>
+                    </p>
+                    <div class="d-flex  row">
+                        <div class="col-md-6 d-flex justify-content-between">
+                            <p class="display-5 align-self-center py-0 my-0"><b>7:30</b> <small>AM</small></p>
+                            <span class="align-self-center" style="font-size: 2rem;"><i
+                                    class="fas fa-angle-right"></i></span>
+                            <p class="display-5 align-self-center py-0 my-0"><b>9:30</b> <small>AM</small></p>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-between">
+                            <div></div>
+                            <p class="align-self-center mb-0" style="font-size: 1.65rem;">$119 (<small
+                                    class="text-muted"><s>$159</s>)</small></p>
+                            <div class="form-group justify-content-end one-way">
+                                <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                            </div>
+                            <div class="return">
+                                <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
+                                    <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="departing" class="mb-1">
+                <p class="text-muted mb-0">Flight Number: 
+                    <script>var d1 ="#"+getRandomInt(1050, 9999); document.write(d1);</script>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>7:00</b> <small>AM</small></p>
@@ -97,15 +139,16 @@
                         </div>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                                <input type="radio" value='{\"TakeTime\":\"7:00AM\", \"landTime\": \"9:00AM\" ,\"price\": 129}' name="return" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #1007 <span class="badge bg-3 text-white">Lowest Fare</span></p>
+                <p class="text-muted mb-0">Flight Number: #1007 <span class="badge bg-3 text-white">Lowest Fare</span>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>7:30</b> <small>AM</small></p>
@@ -127,10 +170,10 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #6666</p>
+                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>7:45</b> <small>AM</small></p>
@@ -152,10 +195,10 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #4201</p>
+                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>8:45</b> <small>AM</small></p>
@@ -177,10 +220,10 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #6991</p>
+                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>12:00</b> <small>PM</small></p>
@@ -202,10 +245,10 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #6969</p>
+                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>3:00</b> <small>PM</small></p>
@@ -226,7 +269,7 @@
                             </label>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -238,8 +281,9 @@
                 <script>document.write(localStorage.getItem("fFrom"));</script>
             </h2>
             <hr>
+            <div id="return-flights"></div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #5234</p>
+                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>7:00</b> <small>AM</small></p>
@@ -258,10 +302,10 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #2354</p>
+                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>7:45</b> <small>AM</small></p>
@@ -280,10 +324,10 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #0245</p>
+                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>8:45</b> <small>AM</small></p>
@@ -302,10 +346,11 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #3643 <span class="badge bg-3 text-white">Lowest Fare</span></p>
+                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script> <span class="badge bg-3 text-white">Lowest Fare</span>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>11:45</b> <small>AM</small></p>
@@ -324,10 +369,10 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #4532</p>
+                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>2:00</b> <small>PM</small></p>
@@ -346,11 +391,11 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: #7979</p>
-                <div class="d-flex  row">
+                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
+                <div class="d-flex  row"></div>
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>6:00</b> <small>PM</small></p>
                         <span class="align-self-center" style="font-size: 2rem;"><i
@@ -367,7 +412,7 @@
                             </label>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="form-group justify-content-center">
@@ -514,6 +559,20 @@
     <!--  Custom Scripts -->
 
     <script src="assets/js/app.js"></script>
+    <!-- Managing page ui on round-trip or one-way selected -->
+    <script type="text/javascript">
+        /**
+     * Get a random integer between `min` and `max`.
+     * 
+     * RNG
+     * 
+     * @param {number} min - min number
+     * @param {number} max - max number
+     * @return {number} a random integer
+     */
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }</script>
     <script type="text/javascript" defer>
         if (localStorage.getItem("flightType") != "round-trip") {
             $(function () {

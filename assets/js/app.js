@@ -55,3 +55,4 @@ $(document).ready(function () {
     $('#f-tos').selectize({ sortField: 'text' });
 
 });
+

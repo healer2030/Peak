@@ -57,7 +57,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="index.html#home">Book a Flight</a>
                         </li>
-                         <li class="nav-item ml-3 mr-3">
+                        <li class="nav-item ml-3 mr-3">
                             <a class="nav-link text-white" href="peakpoints.html">PeakPoints</a>
                         </li>
                         <li class="nav-item">
@@ -71,6 +71,7 @@
     <main class="container mb-5 pb-5" style="margin-top: 6em;">
         <h1 class="text-left">Thank You for flying with Peak</h1>
         <h6 class="text-left"> Here are your reservation details:</h6>
+        <div id=details></div>
         <div class="detail card mb-1 mt-5" style="width: 80%;">
             <div class="row">
                 <p class="col text-center">Departure date:
@@ -89,20 +90,24 @@
                 <script>document.write(localStorage.getItem("fTo"))</script>
             </h1>
             <script>
-                    function generate_random_string(string_length) {
-                        let random_string = '';
-                        let random_ascii;
-                        let ascii_low = 65;
-                        let ascii_high = 90
-                        for (let i = 0; i < string_length; i++) {
-                            random_ascii = Math.floor((Math.random() * (ascii_high - ascii_low)) + ascii_low);
-                            random_string += String.fromCharCode(random_ascii)
-                        }
-                        return random_string
-                    }</script>
+                function generate_random_string(string_length) {
+                    let random_string = '';
+                    let random_ascii;
+                    let ascii_low = 65;
+                    let ascii_high = 90
+                    for (let i = 0; i < string_length; i++) {
+                        random_ascii = Math.floor((Math.random() * (ascii_high - ascii_low)) + ascii_low);
+                        random_string += String.fromCharCode(random_ascii)
+                    }
+                    return random_string
+                }</script>
             <div class="row">
-                <p class="col text-center"># Passenger(s): <script>document.write(localStorage.getItem("pCount"));</script></p>
-                <p class="col text-center">Reservation Code: <script>document.write(generate_random_string(6));</script></p>
+                <p class="col text-center"># Passenger(s):
+                    <script>document.write(localStorage.getItem("pCount"));</script>
+                </p>
+                <p class="col text-center">Reservation Code:
+                    <script>document.write(generate_random_string(6));</script>
+                </p>
             </div>
         </div>
     </main>
@@ -225,9 +230,7 @@
 
         <!-- Copyright -->
         <div class="text-white text-center bg-1">&copy;
-            <script>
-                new Date().getFullYear() > 2018 && document.write(new Date().getFullYear());
-            </script>
+            <script>new Date().getFullYear() > 2018 && document.write(new Date().getFullYear());</script>
             Peak Airlines
             LLC. All Rights Reserved.
         </div>
@@ -245,7 +248,17 @@
 
     <script src="assets/js/app.js"></script>
     <!--Datetime picker script-->
-    <script src="assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
+    <script type="text/javascript" defer>
+        var v = 1;
+        var myHtml = "";
+
+        for (var i = 1; i <= localStorage.getItem("pCount"); i++) {
+            //document.getElementById("passengers").append(Passenger);
+            myHtml += "<div id= 'passenger-" + i + "' class='passenger'><h5 class='mb-3 text-left'>Passenger " + i + "</h5><p></p><div class='row'><div class='col-md-6 mb-3'> <label for='firstName'>First name</label> <input type='text' class='form-control' id='firstName' placeholder='' value='' required><div class='invalid-feedback'> Valid first name is required.</div></div><div class='col-md-6 mb-3'> <label for='lastName'>Last name</label> <input type='text' class='form-control' id='lastName' placeholder='' value='' required><div class='invalid-feedback'> Valid last name is required.</div></div></div><div class='row'><div class='col-md-6 mb-3'><div class='form-group'> <label for='gender'>Gender</label> <select class='p-0 form-control' id='gender'><option>Select Gender</option><option>Male</option><option>Female</option> </select></div></div><div class='col-md-6 mb-3'> <label for=''>Date of Birth</label><div class='row'><div class='form-group col-4'> <select class='p-0 form-control' id='gender'><option>MM</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option> </select></div><div class='form-group col-4'> <select class='p-0 form-control' id='gender'><option>DD</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option> </select></div><div class='form-group col-4'> <input type='number' min='1900' max='2020' class='form-control' id='year' placeholder='YYYY' value='' required></div></div></div></div><hr class='mb-4'></div>";
+        }
+        $(function () {
+            $(myHtml).appendTo("#passengers");
+        });</script>
 </body>
 
 </html>
