@@ -86,19 +86,22 @@
                             </p>
                         </li>
 
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <li class="list-group-item d-flex justify-content-between lh-xl">
                             <div>
                                 <h6 class="my-0 text-left">Flights</h6>
-                                <small class="text-muted">FBLA Discount: All Flights $109.99</small>
+                                <small class="text-muted">Taxes, Fees, and Charges</small>
                             </div>
-                            <span class="text-muted">$
-                                <script>document.write((localStorage.getItem("pCount") * 109.99).toLocaleString(undefined, { maximumFractionDigits: 2 }));</script>
-                                </script></span>
+                            <div class="float-right">
+                            <h6 class="text-left my-0">
+                                <script>document.write("$"+(localStorage.getItem("pCount") * localStorage.getItem("price")).toLocaleString(undefined, { maximumFractionDigits: 2 }));</script>
+                            </h6>
+                                <small class="text-muted text-right"><script>document.write("$" + (((localStorage.getItem("pCount") *  localStorage.getItem("price")) * .075) ).toLocaleString(undefined, { maximumFractionDigits: 2 }));</script></small>
+                                </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Total (USD)</span>
-                            <strong>$
-                                <script>document.write((localStorage.getItem("pCount") * 109.99).toLocaleString(undefined, { maximumFractionDigits: 2 }));</script>
+                            <strong class="my-0">$
+                                <script>document.write((localStorage.getItem("pCount") * localStorage.getItem("price") + ((localStorage.getItem("pCount") *  localStorage.getItem("price")) * .075)).toLocaleString(undefined, { maximumFractionDigits: 2 }));</script>
                                 <small>(taxes
                                     included)</small></strong>
                         </li>
@@ -116,7 +119,7 @@
                                 <input id="peak" name="paymentMethod" type="radio" class="custom-control-input" checked
                                     required>
                                 <label class="custom-control-label" for="peak">PeakPoints <small>(
-                                        <script>document.write((localStorage.getItem("pCount") * 2500).toLocaleString())</script>
+                                        <script>document.write((localStorage.getItem("pCount") * 2500* 2.75).toLocaleString())</script>
                                         for this
                                         trip)</small></label>
                             </div>
@@ -169,6 +172,13 @@
                         <button class="btn bg-2 text-white btn-lg btn-block" onclick="success()" type="button">Complete
                             Purchase</button>
                         <script>function success() {
+                            for(var i = 1; i <= localStorage.getItem("pCount"); i++){
+                                
+                                var fName = document.getElementById("firstName-"+ i).value;
+                                var lName = document.getElementById("lastName-"+ i).value;
+                                var pName = fName + " " + lName;
+                                localStorage.setItem("pName-"+i, pName)
+                            }
                                 document.location.href = "paySuccess.html"
                             }</script>
                     </form>
@@ -320,7 +330,7 @@
 
         for (var i = 1; i <= localStorage.getItem("pCount"); i++) {
             //document.getElementById("passengers").append(Passenger);
-            myHtml += "<div id= 'passenger-"+ i +"' class='passenger'><h5 class='mb-3 text-left'>Passenger " + i + "</h5><p></p><div class='row'><div class='col-md-6 mb-3'> <label for='firstName'>First name</label> <input type='text' class='form-control' id='firstName' placeholder='' value='' required><div class='invalid-feedback'> Valid first name is required.</div></div><div class='col-md-6 mb-3'> <label for='lastName'>Last name</label> <input type='text' class='form-control' id='lastName' placeholder='' value='' required><div class='invalid-feedback'> Valid last name is required.</div></div></div><div class='row'><div class='col-md-6 mb-3'><div class='form-group'> <label for='gender'>Gender</label> <select class='p-0 form-control' id='gender'><option>Select Gender</option><option>Male</option><option>Female</option> </select></div></div><div class='col-md-6 mb-3'> <label for=''>Date of Birth</label><div class='row'><div class='form-group col-4'> <select class='p-0 form-control' id='gender'><option>MM</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option> </select></div><div class='form-group col-4'> <select class='p-0 form-control' id='gender'><option>DD</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option> </select></div><div class='form-group col-4'> <input type='number' min='1900' max='2020' class='form-control' id='year' placeholder='YYYY' value='' required></div></div></div></div><hr class='mb-4'></div>";
+            myHtml += "<div id= 'passenger-"+ i +"' class='passenger'><h5 class='mb-3 text-left'>Passenger " + i + "</h5><p></p><div class='row'><div class='col-md-6 mb-3'> <label for='firstName'>First name</label> <input type='text' class='form-control' id='firstName-"+ i +"' placeholder='' value='' required><div class='invalid-feedback'> Valid first name is required.</div></div><div class='col-md-6 mb-3'> <label for='lastName'>Last name</label> <input type='text' class='form-control' id='lastName-"+i+"' placeholder='' value='' required><div class='invalid-feedback'> Valid last name is required.</div></div></div><div class='row'><div class='col-md-6 mb-3'><div class='form-group'> <label for='gender'>Gender</label> <select class='p-0 form-control' id='gender'><option>Select Gender</option><option>Male</option><option>Female</option> </select></div></div><div class='col-md-6 mb-3'> <label for=''>Date of Birth</label><div class='row'><div class='form-group col-4'> <select class='p-0 form-control' id='gender'><option>MM</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option> </select></div><div class='form-group col-4'> <select class='p-0 form-control' id='gender'><option>DD</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option> </select></div><div class='form-group col-4'> <input type='number' min='1900' max='2020' class='form-control' id='year' placeholder='YYYY' value='' required></div></div></div></div><hr class='mb-4'></div>";
         }
         $(function () {
             $(myHtml).appendTo("#passengers");

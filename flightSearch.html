@@ -92,36 +92,9 @@
                 <script>document.write(localStorage.getItem("fTo"))</script>
             </h2>
             <hr>
-            <div id="depart-flights">
-                <div id="departing-0" class="mb-1">
-                    <p class="text-muted mb-0">Flight Number: #1007 <span class="badge bg-3 text-white">Lowest Fare</span>
-                    </p>
-                    <div class="d-flex  row">
-                        <div class="col-md-6 d-flex justify-content-between">
-                            <p class="display-5 align-self-center py-0 my-0"><b>7:30</b> <small>AM</small></p>
-                            <span class="align-self-center" style="font-size: 2rem;"><i
-                                    class="fas fa-angle-right"></i></span>
-                            <p class="display-5 align-self-center py-0 my-0"><b>9:30</b> <small>AM</small></p>
-                        </div>
-                        <div class="col-md-6 d-flex justify-content-between">
-                            <div></div>
-                            <p class="align-self-center mb-0" style="font-size: 1.65rem;">$119 (<small
-                                    class="text-muted"><s>$159</s>)</small></p>
-                            <div class="form-group justify-content-end one-way">
-                                <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
-                            </div>
-                            <div class="return">
-                                <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                    <input type="radio" name="return" id="option1" autocomplete="off"> Select
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div id="departing" class="mb-1">
-                <p class="text-muted mb-0">Flight Number: 
-                    <script>var d1 ="#"+getRandomInt(1050, 9999); document.write(d1);</script>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>var d1 = "#" + getRandomInt(1050, 9999); document.write(d1);</script>
                 </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
@@ -135,15 +108,28 @@
                         <p class="align-self-center mb-0" style="font-size: 1.65rem;">$129 (<small
                                 class="text-muted"><s>$169</s>)</small></p>
                         <div class="form-group justify-content-end one-way">
-                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                            <a href='javascript:;' onclick="df2()" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book
+                                Now</a>
                         </div>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" value='{\"TakeTime\":\"7:00AM\", \"landTime\": \"9:00AM\" ,\"price\": 129}' name="return" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"7:00 AM", "landTime": "9:00 AM" ,"price": 119}'
+                                    name="return" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
                 </div>
+                <script>
+                    function df2() {
+                        var takeTime = "7:00 AM";
+                        var landTime = "9:00 AM";
+                        var price = 119;
+                        localStorage.setItem("takeTime", takeTime);
+                        localStorage.setItem("landTime", landTime);
+                        localStorage.setItem("price", price);
+                        document.location.href = "flightPay.html"
+                    }</script>
 
             </div>
             <div class="mb-1">
@@ -161,19 +147,34 @@
                         <p class="align-self-center mb-0" style="font-size: 1.65rem;">$119 (<small
                                 class="text-muted"><s>$159</s>)</small></p>
                         <div class="form-group justify-content-end one-way">
-                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                            <a href='javascript:;' onclick="df3()" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book
+                                Now</a>
                         </div>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"7:30 AM", "landTime": "9:30 AM" ,"price": 119}'
+                                    name="return" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
                 </div>
+                <script>
+                    function df3() {
+                        var takeTime = "7:30 AM";
+                        var landTime = "9:30 AM";
+                        var price = 119;
+                        localStorage.setItem("takeTime", takeTime);
+                        localStorage.setItem("landTime", landTime);
+                        localStorage.setItem("price", price);
+                        document.location.href = "flightPay.html"
+                    }</script>
 
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>document.write("#" + getRandomInt(1050, 9999));</script>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>7:45</b> <small>AM</small></p>
@@ -186,19 +187,34 @@
                         <p class="align-self-center mb-0" style="font-size: 1.65rem;">$149 (<small
                                 class="text-muted"><s>$189</s>)</small></p>
                         <div class="form-group justify-content-end pay-button one-way">
-                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                            <a href='javascript:;' onclick="df4()" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book
+                                Now</a>
                         </div>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"7:45 AM", "landTime": "10:00 AM" ,"price": 149}'
+                                    name="return" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
                 </div>
+                <script>
+                    function df4() {
+                        var takeTime = "7:45 AM";
+                        var landTime = "10:00 AM";
+                        var price = 149;
+                        localStorage.setItem("takeTime", takeTime);
+                        localStorage.setItem("landTime", landTime);
+                        localStorage.setItem("price", price);
+                        document.location.href = "flightPay.html"
+                    }</script>
 
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>document.write("#" + getRandomInt(1050, 9999));</script>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>8:45</b> <small>AM</small></p>
@@ -211,19 +227,34 @@
                         <p class="align-self-center mb-0" style="font-size: 1.65rem;">$139 (<small
                                 class="text-muted"><s>$179</s>)</small></p>
                         <div class="form-group justify-content-end one-way">
-                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                            <a href='javascript:;' onclick="df5()" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book
+                                Now</a>
                         </div>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"8:45 AM", "landTime": "11:00 AM" ,"price": 139}'
+                                    name="return" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
                 </div>
+                <script>
+                    function df5() {
+                        var takeTime = "8:45 AM";
+                        var landTime = "11:00 AM";
+                        var price = 139;
+                        localStorage.setItem("takeTime", takeTime);
+                        localStorage.setItem("landTime", landTime);
+                        localStorage.setItem("price", price);
+                        document.location.href = "flightPay.html"
+                    }</script>
 
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>document.write("#" + getRandomInt(1050, 9999));</script>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>12:00</b> <small>PM</small></p>
@@ -236,19 +267,34 @@
                         <p class="align-self-center mb-0" style="font-size: 1.65rem;">$129 (<small
                                 class="text-muted"><s>$169</s>)</small></p>
                         <div class="form-group justify-content-end one-way">
-                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                            <a href='javascript:;' onclick="df6()" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book
+                                Now</a>
                         </div>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"12:00 PM", "landTime": "2:00 PM" ,"price": 129}'
+                                    name="return" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
                 </div>
+                <script>
+                    function df6() {
+                        var takeTime = "12:00 PM";
+                        var landTime = "2:00 PM";
+                        var price = 129;
+                        localStorage.setItem("takeTime", takeTime);
+                        localStorage.setItem("landTime", landTime);
+                        localStorage.setItem("price", price);
+                        document.location.href = "flightPay.html"
+                    }</script>
 
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>document.write("#" + getRandomInt(1050, 9999));</script>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>3:00</b> <small>PM</small></p>
@@ -261,14 +307,27 @@
                         <p class="align-self-center mb-0" style="font-size: 1.65rem;">$129 (<small
                                 class="text-muted"><s>$169</s>)</small></p>
                         <div class="form-group justify-content-end one-way">
-                            <a href="flightPay.html" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book Now</a>
+                            <a href='javascript:;' onclick="df7()" class="btn bg-2 text-white mr-5 ml-2 mt-4">Book
+                                Now</a>
                         </div>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="return" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"3:00 PM", "landTime": "5:00 PM" ,"price": 129}'
+                                    name="return" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
+                    <script>
+                        function df7() {
+                            var takeTime = "3:00 PM";
+                            var landTime = "5:00 PM";
+                            var price = 129;
+                            localStorage.setItem("takeTime", takeTime);
+                            localStorage.setItem("landTime", landTime);
+                            localStorage.setItem("price", price);
+                            document.location.href = "flightPay.html"
+                        }</script>
 
                 </div>
             </div>
@@ -283,7 +342,9 @@
             <hr>
             <div id="return-flights"></div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>document.write("#" + getRandomInt(1050, 9999));</script>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>7:00</b> <small>AM</small></p>
@@ -297,7 +358,9 @@
                                 class="text-muted"><s>$169</s>)</small></p>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"7:00 AM", "landTime": "9:30 AM" ,"price": 129}'
+                                    name="returns" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
@@ -305,7 +368,9 @@
 
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>document.write("#" + getRandomInt(1050, 9999));</script>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>7:45</b> <small>AM</small></p>
@@ -319,7 +384,9 @@
                                 class="text-muted"><s>$189</s>)</small></p>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"7:45 AM", "landTime": "10:00 AM" ,"price": 139}'
+                                    name="returns" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
@@ -327,7 +394,9 @@
 
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>document.write("#" + getRandomInt(1050, 9999));</script>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>8:45</b> <small>AM</small></p>
@@ -341,7 +410,9 @@
                                 class="text-muted"><s>$199</s>)</small></p>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"8:45 AM", "landTime": "11:00 AM" ,"price": 159}'
+                                    name="returns" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
@@ -349,7 +420,9 @@
 
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script> <span class="badge bg-3 text-white">Lowest Fare</span>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>document.write("#" + getRandomInt(1050, 9999));</script> <span
+                        class="badge bg-3 text-white">Lowest Fare</span>
                 </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
@@ -364,7 +437,9 @@
                                 class="text-muted"><s>$159</s>)</small></p>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"11:45 AM", "landTime": "1:00 PM" ,"price": 119}'
+                                    name="returns" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
@@ -372,7 +447,9 @@
 
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>document.write("#" + getRandomInt(1050, 9999));</script>
+                </p>
                 <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>2:00</b> <small>PM</small></p>
@@ -386,7 +463,9 @@
                                 class="text-muted"><s>$169</s>)</small></p>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"2:00 PM", "landTime": "4:00 PM" ,"price": 129}'
+                                    name="returns" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
@@ -394,8 +473,10 @@
 
             </div>
             <div class="mb-1">
-                <p class="text-muted mb-0">Flight Number: <script>document.write("#"+getRandomInt(1050, 9999));</script></p>
-                <div class="d-flex  row"></div>
+                <p class="text-muted mb-0">Flight Number:
+                    <script>document.write("#" + getRandomInt(1050, 9999));</script>
+                </p>
+                <div class="d-flex  row">
                     <div class="col-md-6 d-flex justify-content-between">
                         <p class="display-5 align-self-center py-0 my-0"><b>6:00</b> <small>PM</small></p>
                         <span class="align-self-center" style="font-size: 2rem;"><i
@@ -408,16 +489,35 @@
                                 class="text-muted"><s>$169</s>)</small></p>
                         <div class="return">
                             <label class="justify-content-end btn bg-2 text-white mr-5 ml-2 mt-4">
-                                <input type="radio" name="returns" id="option1" autocomplete="off"> Select
+                                <input type="radio"
+                                    value='{"takeTime":"6:00 PM", "landTime": "8:00 PM" ,"price": 129}'
+                                    name="returns" id="option1" autocomplete="off"> Select
                             </label>
                         </div>
                     </div>
-
                 </div>
             </div>
+
             <div class="form-group justify-content-center">
-                <a href="flightPay.html" class="btn bg-2 btn-lg btn-block text-white mr-5 ml-2 mt-4">Book Now</a>
+                <a href='javascript:;' onclick="dr()" class="btn bg-2 btn-lg btn-block text-white mr-5 ml-2 mt-4">Book Now</a>
             </div>
+            <script>
+                    function dr() {
+                        var departOBJ = document.querySelector('input[name="return"]:checked').value;
+                        var returnOBJ = document.querySelector('input[name="returns"]:checked').value;
+                        var depart = JSON.parse(departOBJ);
+                       // depart = depart.replace(/^"(.*)"$/, '$1');
+                        var returns = JSON.parse(returnOBJ);
+                       // returns = returns.replace(/^"(.*)"$/, '$1');
+                       var price = depart.price + returns.price;
+                        localStorage.setItem("takeTime", depart.takeTime);
+                        localStorage.setItem("landTime", depart.landTime);
+                        localStorage.setItem("RtakeTime", returns.takeTime);
+                        localStorage.setItem("RlandTime", returns.landTime);
+                        localStorage.setItem("price", price);
+                        document.location.href = "flightPay.html"
+                    }</script>
+
         </section>
 
 
