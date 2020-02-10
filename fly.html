@@ -57,6 +57,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="index.html#home">Book a Flight</a>
                         </li>
+                        <li class="nav-item dropdown ml-3">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel Information</a>
+                            <div class="dropdown-menu dropdown-animate bg-3" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="bagpol.html">Baggage Policies</a>
+                                <a class="dropdown-item" href="lost.html">Traveling with Infants</a>
+                                <a class="dropdown-item" href="pur.html">Purchasing and Refund</a>
+                            </div>
+                        </li>
                          <li class="nav-item ml-3 mr-3">
                             <a class="nav-link text-white" href="peakpoints.html">PeakPoints</a>
                         </li>
@@ -109,6 +118,7 @@
             <div class="col-md-6">
                 <div id="map"></div>
                 <script>
+                    //initialize the Google Maps API with the locations of the airport Peak operates at
                     function initMap() {
                         var center = { lat: 33.640411, lng: -84.419853 };
 
